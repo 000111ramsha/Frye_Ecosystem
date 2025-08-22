@@ -203,7 +203,7 @@ export default function HomePage() {
                     alt="Earn FRYE"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover rounded-lg"
+                    className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-4">
@@ -235,13 +235,13 @@ export default function HomePage() {
             {/* Respect Fees - Wide card second row */}
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/paying-respect-fee.png" 
                     alt="Respect Fees" 
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover rounded-lg" 
+                    className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
                 <div className="p-4">
@@ -254,7 +254,7 @@ export default function HomePage() {
             {/* Staking - Card in row 2, position 1 */}
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/staking.png" 
                     alt="Staking" 
@@ -273,7 +273,7 @@ export default function HomePage() {
             {/* Licensing - Wider card in row 2, position 2 */}
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/licensing.png" 
                     alt="Licensing" 
@@ -292,7 +292,7 @@ export default function HomePage() {
             {/* Royalties - Wider card in row 2, position 3 */}
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/royalties.png" 
                     alt="Royalties" 
@@ -311,7 +311,7 @@ export default function HomePage() {
             {/* Governance - Card in row 2, position 4 */}
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/governance.png" 
                     alt="Governance" 
@@ -413,7 +413,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/smart-prompting.png" 
                     alt="Smart Prompting" 
@@ -431,7 +431,7 @@ export default function HomePage() {
 
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/rapid-iteration.png" 
                     alt="Rapid Iteration" 
@@ -449,7 +449,7 @@ export default function HomePage() {
 
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/collaborative-tools.png" 
                     alt="Collaborative Tools" 
@@ -481,7 +481,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/eternal-storage.png" 
                     alt="Eternal Storage" 
@@ -499,7 +499,7 @@ export default function HomePage() {
 
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/distributed-security.png" 
                     alt="Distributed Security" 
@@ -517,7 +517,7 @@ export default function HomePage() {
 
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/value-preservation.png" 
                     alt="Value Preservation" 
@@ -549,7 +549,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/intelligent-analysis.png" 
                     alt="Intelligent Analysis" 
@@ -567,7 +567,7 @@ export default function HomePage() {
 
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/smart-recommendations.png" 
                     alt="Smart Recommendations" 
@@ -585,7 +585,7 @@ export default function HomePage() {
 
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
-                <div className="h-80 overflow-hidden p-4">
+                <div className="h-64 overflow-hidden p-4 relative">
                   <Image 
                     src="/predictive-insights.png" 
                     alt="Predictive Insights" 
