@@ -16,7 +16,7 @@ const mockNFTs = [
     timestamp: "2024-01-15",
     royalty: "5%",
     blockchain: "Polygon",
-    image: "/ai-algorithm-visualization.png",
+    image: "/AI-In-Algorithmic-Trading.jpg",
     serial: "FRYE-0000001",
   },
   {
@@ -26,7 +26,7 @@ const mockNFTs = [
     timestamp: "2024-01-12",
     royalty: "7%",
     blockchain: "Ethereum",
-    image: "/placeholder-38t67.png",
+    image: "/sustainable-energy-solutions.jpg",
     serial: "FRYE-0000002",
   },
   {
@@ -58,7 +58,7 @@ export default function InnovationVault() {
   return (
     <TooltipProvider>
       <div className="pt-16 min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8">
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div>
@@ -98,10 +98,10 @@ export default function InnovationVault() {
                       <SelectTrigger className="bg-slate-800 border-slate-600 text-white">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="date">Date</SelectItem>
-                        <SelectItem value="title">Title</SelectItem>
-                        <SelectItem value="royalty">Royalty</SelectItem>
+                      <SelectContent className="bg-slate-800 border-slate-600">
+                        <SelectItem value="date" className="text-white hover:bg-slate-700 focus:bg-slate-700">Date</SelectItem>
+                        <SelectItem value="title" className="text-white hover:bg-slate-700 focus:bg-slate-700">Title</SelectItem>
+                        <SelectItem value="royalty" className="text-white hover:bg-slate-700 focus:bg-slate-700">Royalty</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -112,11 +112,11 @@ export default function InnovationVault() {
                       <SelectTrigger className="bg-slate-800 border-slate-600 text-white">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">All Chains</SelectItem>
-                        <SelectItem value="polygon">Polygon</SelectItem>
-                        <SelectItem value="ethereum">Ethereum</SelectItem>
-                        <SelectItem value="bitcoin">Bitcoin</SelectItem>
+                      <SelectContent className="bg-slate-800 border-slate-600">
+                        <SelectItem value="all" className="text-white hover:bg-slate-700 focus:bg-slate-700">All Chains</SelectItem>
+                        <SelectItem value="polygon" className="text-white hover:bg-slate-700 focus:bg-slate-700">Polygon</SelectItem>
+                        <SelectItem value="ethereum" className="text-white hover:bg-slate-700 focus:bg-slate-700">Ethereum</SelectItem>
+                        <SelectItem value="bitcoin" className="text-white hover:bg-slate-700 focus:bg-slate-700">Bitcoin</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -212,11 +212,11 @@ export default function InnovationVault() {
                           </Badge>
                         </div>
 
-                        <div className="flex space-x-2 pt-4">
+                        <div className="grid grid-cols-2 gap-2 pt-4">
                           <Button
                             size="sm"
                             variant="outline"
-                            className="flex-1 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 bg-transparent"
+                            className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 bg-transparent"
                           >
                             <Eye className="h-4 w-4 mr-1" />
                             View
@@ -224,7 +224,7 @@ export default function InnovationVault() {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="flex-1 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-slate-900 bg-transparent"
+                            className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-slate-900 bg-transparent"
                           >
                             <Send className="h-4 w-4 mr-1" />
                             Transfer
@@ -232,7 +232,7 @@ export default function InnovationVault() {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="flex-1 border-green-400 text-green-400 hover:bg-green-400 hover:text-slate-900 bg-transparent"
+                            className="col-span-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-slate-900 bg-transparent"
                           >
                             <DollarSign className="h-4 w-4 mr-1" />
                             Royalties

@@ -1,317 +1,144 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
+import { useState } from "react"
 import {
-  Wallet,
-  Zap,
-  Shield,
-  Vote,
-  TrendingUp,
-  Activity,
-  ArrowRight,
   Coins,
   FileText,
   Handshake,
   Sparkles,
+  Home,
+  Settings,
+  ChevronsLeft,
+  ChevronsRight,
+  Shield,
+  Vote,
 } from "lucide-react"
 import Link from "next/link"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+import { cn } from "@/lib/utils"
 
-const chartData = [
-  { name: "Jan", value: 400 },
-  { name: "Feb", value: 300 },
-  { name: "Mar", value: 600 },
-  { name: "Apr", value: 800 },
-  { name: "May", value: 700 },
-  { name: "Jun", value: 900 },
-]
-
-const recentActivity = [
-  { action: "Minted NFT", item: "AI Trading Algorithm", time: "2 hours ago", type: "mint" },
-  { action: "Received Royalty", item: "0.5 ETH", time: "1 day ago", type: "royalty" },
-  { action: "Voted on Proposal", item: "Governance #12", time: "3 days ago", type: "vote" },
-  { action: "Staked Tokens", item: "1000 $FRYE", time: "1 week ago", type: "stake" },
-]
+// Import dashboard content components
+import DashboardOverview from "@/components/dashboard/DashboardOverview"
+import TokenDashboardContent from "@/components/dashboard/TokenDashboardContent"
+import InnovationVaultContent from "@/components/dashboard/InnovationVaultContent"
+import IdeaSubmissionContent from "@/components/dashboard/IdeaSubmissionContent"
+import SnapshotDAOContent from "@/components/dashboard/SnapshotDAOContent"
 
 export default function Dashboard() {
-  // Mock data for the innovation counter
-  const innovationsMinted = 127543
-  const maxInnovations = 500000000
-  const progressPercentage = (innovationsMinted / maxInnovations) * 100
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
+  const [activeView, setActiveView] = useState("overview")
+  
+  const sidebarItems = [
+    { key: "overview", label: "Overview", icon: Home },
+    { key: "token-dashboard", label: "Token Dashboard", icon: Coins },
+    { key: "innovation-vault", label: "Innovation Vault", icon: Shield },
+    { key: "idea-submission", label: "Idea Submission", icon: Sparkles },
+    { key: "snapshot-dao", label: "Snapshot DAO", icon: Vote },
+    { key: "respect-fees", label: "Respect Fees", icon: Handshake },
+    { key: "ip-tools", label: "IP Tools", icon: FileText },
+    { key: "settings", label: "Settings", icon: Settings },
+  ] as const
+
+  const renderContent = () => {
+    switch (activeView) {
+      case "overview":
+        return <DashboardOverview />
+      case "token-dashboard":
+        return <TokenDashboardContent />
+      case "innovation-vault":
+        return <InnovationVaultContent />
+      case "idea-submission":
+        return <IdeaSubmissionContent />
+      case "snapshot-dao":
+        return <SnapshotDAOContent />
+      case "respect-fees":
+        return <TokenDashboardContent /> // Reuse token dashboard for now
+      case "ip-tools":
+        return <TokenDashboardContent /> // Reuse token dashboard for now
+      case "settings":
+        return <DashboardOverview /> // Reuse overview for now
+      default:
+        return <DashboardOverview />
+    }
+  }
 
   return (
-    <div className="pt-16 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          <div>
-            <h1 className="text-4xl font-bold gradient-text mb-2">Dashboard</h1>
-            <p className="text-slate-300">Manage your FRYE Ecosystem interactions</p>
-          </div>
-
-          {/* Wallet Status */}
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl mt-4 md:mt-0">
-            <CardContent className="p-4">
-              <div className="flex items-center space-x-2">
-                <Wallet className="h-5 w-5 text-cyan-400" />
-                <span className="text-white font-medium">0x...1234</span>
-                <Badge variant="outline" className="text-green-400 border-green-400">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 mr-1 bg-white rounded-full flex items-center justify-center">
-                      <span className="text-purple-600 font-bold text-xs">P</span>
-                    </div>
-                    Polygon
+    <>
+      {/* Sidebar */}
+      <aside
+        className={cn(
+          "hidden md:block fixed left-0 top-16 bottom-0 bg-slate-950/95 backdrop-blur-xl border-r border-slate-800/50 shadow-xl transition-all duration-300",
+          isSidebarCollapsed ? "w-16" : "w-64",
+        )}
+      >
+        <nav className="h-full flex flex-col">
+          <ul className="flex-1 py-4 space-y-1">
+            {sidebarItems.map((item) => (
+              <li key={item.label}>
+                <button
+                  onClick={() => setActiveView(item.key)}
+                  className={cn(
+                    "group flex items-center gap-3 px-3 py-2 text-sm rounded-md transition-colors w-full text-left",
+                    activeView === item.key
+                      ? "text-cyan-300 bg-slate-800/60 shadow-lg shadow-cyan-500/20"
+                      : "text-slate-300 hover:text-cyan-300 hover:bg-slate-800/50",
+                  )}
+                  title={isSidebarCollapsed ? item.label : undefined}
+                >
+                  <item.icon className={cn(
+                    "h-5 w-5 transition-colors",
+                    activeView === item.key ? "text-cyan-300" : "text-slate-400 group-hover:text-cyan-300"
+                  )} />
+                  {!isSidebarCollapsed && <span className="truncate">{item.label}</span>}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <div className="p-3 border-t border-slate-800/60">
+            {isSidebarCollapsed ? (
+              <div className="flex flex-col items-center gap-2">
+                <div className="p-[2px] rounded-full bg-gradient-to-r from-cyan-400 to-purple-500">
+                  <div className="w-8 h-8 rounded-full overflow-hidden bg-slate-900">
+                    <img src="/AI-In-Algorithmic-Trading.jpg" alt="Profile" className="w-full h-full object-cover" />
                   </div>
-                </Badge>
+                </div>
+                <button
+                  onClick={() => setIsSidebarCollapsed((prev) => !prev)}
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-700/60 text-slate-300 hover:bg-slate-800/60 hover:text-cyan-300 transition-colors"
+                  aria-label="Expand sidebar"
+                >
+                  <ChevronsRight className="h-5 w-5" />
+                </button>
               </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Overview Widgets */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-slate-300">$FRYE Balance</CardTitle>
-              <div className="flex items-center">
-                <Coins className="h-4 w-4 text-cyan-400 mr-1" />
-                <div className="w-3 h-3 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-purple-600 font-bold text-xs">P</span>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-white">2,450</div>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Invest in $FRYE on Polygon ($10 = 1,000 $FRYE). Earn 1 $FRYE per minted idea and Respect Fees for
-                hybridization.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-slate-300">NFTs Owned</CardTitle>
-              <Shield className="h-4 w-4 text-purple-400" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-white">8</div>
-              <p className="text-xs text-slate-400">+2 this week</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-slate-300">Respect Fees Earned</CardTitle>
-              <Handshake className="h-4 w-4 text-orange-400" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-white">50 $FRYE</div>
-              <p className="text-xs text-slate-400">From hybridization</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-slate-300">Governance Power</CardTitle>
-              <Vote className="h-4 w-4 text-yellow-400" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-white">1,200</div>
-              <p className="text-xs text-slate-400">Voting tokens</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Innovation Counter Widget */}
-        <div className="mb-8">
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl neon-glow">
-            <CardContent className="p-6">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-2">Innovations Minted</h3>
-                <div className="text-4xl font-bold gradient-text mb-4">
-                  {innovationsMinted.toLocaleString()}/500,000,000
-                </div>
-                <Progress value={progressPercentage} className="h-3 mb-4 bg-slate-800" />
-                <p className="text-slate-300">Each innovation creates 1 $FRYE token with a serial number</p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* CRISPR Vault Access Widget */}
-        <div className="mb-8">
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-white flex items-center">
-                <Shield className="h-5 w-5 mr-2 text-cyan-400" />
-                CRISPR Vault Access
-                <div className="w-5 h-5 ml-2 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-purple-600 font-bold text-xs">P</span>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-slate-300 leading-relaxed">
-                Unlock more vaults by investing in $FRYE on Polygon ($10 = 1,000 $FRYE), not linked to crypto. Earn 1
-                $FRYE per minted idea with a serial number (500M cap). Pay Respect Fees to hybridize.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Navigation Tiles */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link href="/innovation-vault">
-                <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300 cursor-pointer group">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center justify-between">
-                      <div className="flex items-center">
-                        <Shield className="h-6 w-6 mr-2 text-cyan-400" />
-                        Innovation Vault
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-cyan-400 transition-colors" />
-                    </CardTitle>
-                    <CardDescription className="text-slate-300">Manage your tokenized IP assets</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-
-              <Link href="/token-dashboard">
-                <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300 cursor-pointer group">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center justify-between">
-                      <div className="flex items-center">
-                        <Coins className="h-6 w-6 mr-2 text-purple-400" />
-                        Token Dashboard
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-purple-400 transition-colors" />
-                    </CardTitle>
-                    <CardDescription className="text-slate-300">Manage $FRYE token activities</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-
-              <Link href="/snapshot-dao">
-                <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300 cursor-pointer group">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center justify-between">
-                      <div className="flex items-center">
-                        <Vote className="h-6 w-6 mr-2 text-yellow-400" />
-                        Snapshot DAO
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-yellow-400 transition-colors" />
-                    </CardTitle>
-                    <CardDescription className="text-slate-300">Participate in governance</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-
-              <Link href="/idea-submission">
-                <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl hover:neon-glow transition-all duration-300 cursor-pointer group">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center justify-between">
-                      <div className="flex items-center">
-                        <Sparkles className="h-6 w-6 mr-2 text-green-400" />
-                        PromptX Tools
-                      </div>
-                      <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-green-400 transition-colors" />
-                    </CardTitle>
-                    <CardDescription className="text-slate-300">
-                      Invest in $FRYE on Polygon to unlock. Earn $FRYE with serial-linked metadata by minting ideas and
-                      Respect Fees for hybridization.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-            </div>
-
-            {/* Activity Chart */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl neon-glow">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Activity className="h-5 w-5 mr-2 text-cyan-400" />
-                  Token Activity
-                </CardTitle>
-                <CardDescription className="text-slate-300">
-                  Your $FRYE token activity over the last 6 months
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="h-64">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                      <XAxis dataKey="name" stroke="#9CA3AF" />
-                      <YAxis stroke="#9CA3AF" />
-                      <Tooltip
-                        contentStyle={{
-                          backgroundColor: "#1F2937",
-                          border: "1px solid #374151",
-                          borderRadius: "8px",
-                        }}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="value"
-                        stroke="#00D4FF"
-                        strokeWidth={2}
-                        dot={{ fill: "#00D4FF", strokeWidth: 2, r: 4 }}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Recent Activity */}
-          <div className="lg:col-span-1">
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl neon-glow">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <FileText className="h-5 w-5 mr-2 text-cyan-400" />
-                  Recent Activity
-                </CardTitle>
-                <CardDescription className="text-slate-300">Your latest ecosystem interactions</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {recentActivity.map((activity, index) => (
-                    <div key={index} className="flex items-start space-x-3 p-3 bg-slate-800/30 rounded-lg">
-                      <div
-                        className={`p-2 rounded-full ${
-                          activity.type === "mint"
-                            ? "bg-cyan-500/20"
-                            : activity.type === "royalty"
-                              ? "bg-green-500/20"
-                              : activity.type === "vote"
-                                ? "bg-yellow-500/20"
-                                : "bg-purple-500/20"
-                        }`}
-                      >
-                        {activity.type === "mint" && <Zap className="h-4 w-4 text-cyan-400" />}
-                        {activity.type === "royalty" && <TrendingUp className="h-4 w-4 text-green-400" />}
-                        {activity.type === "vote" && <Vote className="h-4 w-4 text-yellow-400" />}
-                        {activity.type === "stake" && <Coins className="h-4 w-4 text-purple-400" />}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-white">{activity.action}</p>
-                        <p className="text-sm text-slate-400 truncate">{activity.item}</p>
-                        <p className="text-xs text-slate-500">{activity.time}</p>
-                      </div>
+            ) : (
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="p-[2px] rounded-full bg-gradient-to-r from-cyan-400 to-purple-500">
+                    <div className="w-8 h-8 rounded-full overflow-hidden bg-slate-900">
+                      <img src="/AI-In-Algorithmic-Trading.jpg" alt="Profile" className="w-full h-full object-cover" />
                     </div>
-                  ))}
+                  </div>
+                  <div className="leading-tight">
+                    <p className="text-sm text-white">Guest User</p>
+                    <p className="text-xs text-slate-400">Not connected</p>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+                <button
+                  onClick={() => setIsSidebarCollapsed((prev) => !prev)}
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-700/60 text-slate-300 hover:bg-slate-800/60 hover:text-cyan-300 transition-colors"
+                  aria-label="Collapse sidebar"
+                >
+                  <ChevronsLeft className="h-5 w-5" />
+                </button>
+              </div>
+            )}
           </div>
-        </div>
+        </nav>
+      </aside>
+
+      {/* Content */}
+      <div className={cn("pt-16 min-h-screen transition-all", isSidebarCollapsed ? "md:pl-16" : "md:pl-64")}> 
+        {renderContent()}
       </div>
-    </div>
+    </>
   )
 }

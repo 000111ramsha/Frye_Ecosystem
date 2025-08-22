@@ -97,7 +97,7 @@ export default function IdeaSubmission() {
     return (
       <TooltipProvider>
         <div className="pt-16 min-h-screen flex items-center justify-center">
-          <div className="max-w-md mx-auto px-4">
+          <div className="max-w-md mx-auto px-3 sm:px-4">
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl neon-glow text-center">
               <CardContent className="p-8">
                 <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
@@ -150,7 +150,7 @@ export default function IdeaSubmission() {
   return (
     <TooltipProvider>
       <div className="pt-16 min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold gradient-text mb-2">Submit Your Innovation</h1>
             <p className="text-slate-300">Transform your idea into a tokenized intellectual asset</p>
@@ -162,7 +162,7 @@ export default function IdeaSubmission() {
               <span className="text-sm text-slate-400">Progress</span>
               <span className="text-sm text-cyan-400">{currentStep}/4</span>
             </div>
-            <Progress value={progressPercentage} className="h-2" />
+            <Progress value={progressPercentage} className="h-2 bg-slate-800 [&>div]:bg-gradient-to-r [&>div]:from-cyan-400 [&>div]:to-purple-400" />
             <div className="flex justify-between mt-2 text-xs text-slate-400">
               <span className={currentStep >= 1 ? "text-cyan-400" : ""}>Input Idea</span>
               <span className={currentStep >= 2 ? "text-cyan-400" : ""}>Enhance with PromptX</span>

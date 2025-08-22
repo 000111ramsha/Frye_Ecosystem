@@ -91,13 +91,13 @@ const tokenUtilities = [
 
 export default function TokenDashboard() {
   // Mock data for the innovation counter
-  const innovationsMinted = 127543
+  const innovationsMinted = 12750000  // More realistic early adoption number
   const maxInnovations = 500000000
   const progressPercentage = (innovationsMinted / maxInnovations) * 100
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold gradient-text mb-2">Token Dashboard</h1>
@@ -125,7 +125,7 @@ export default function TokenDashboard() {
                 <div className="text-center mb-4">
                   <h3 className="text-xl font-bold text-white mb-2">Innovations Minted</h3>
                   <div className="text-3xl font-bold gradient-text mb-4">{innovationsMinted.toLocaleString()}/500M</div>
-                  <Progress value={progressPercentage} className="h-3 mb-4 bg-slate-800" />
+                  <Progress value={progressPercentage} className="h-3 mb-4 bg-slate-800 [&>div]:bg-gradient-to-r [&>div]:from-cyan-400 [&>div]:to-purple-400" />
                   <p className="text-slate-300 text-sm">
                     Each $FRYE token is serial-linked to an innovation. Respect Fees enable collaboration.
                   </p>

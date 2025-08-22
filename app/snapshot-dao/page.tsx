@@ -74,7 +74,7 @@ export default function SnapshotDAO() {
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div>
@@ -194,7 +194,7 @@ export default function SnapshotDAO() {
                         <span className="text-green-400">For: {proposal.votesFor.toLocaleString()}</span>
                         <span className="text-red-400">Against: {proposal.votesAgainst.toLocaleString()}</span>
                       </div>
-                      <Progress value={(proposal.votesFor / proposal.totalVotes) * 100} className="h-2" />
+                      <Progress value={(proposal.votesFor / proposal.totalVotes) * 100} className="h-2 bg-slate-800 [&>div]:bg-gradient-to-r [&>div]:from-green-400 [&>div]:to-blue-400" />
                       <div className="text-center text-sm text-slate-400">
                         Total Votes: {proposal.totalVotes.toLocaleString()}
                       </div>
