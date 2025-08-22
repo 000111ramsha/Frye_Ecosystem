@@ -2,6 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Chrome-specific fixes for hydration issues */
+@supports (-webkit-appearance: none) {
+  /* Ensure consistent rendering in Chrome */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Fix for Chrome's stricter box-sizing */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Chrome-specific backdrop-filter fixes */
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+  }
+  
+  .backdrop-blur-lg {
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+  
+  .backdrop-blur {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Prevent hydration flicker */
+.hydration-safe {
+  visibility: hidden;
+}
+
+.hydration-safe.hydrated {
+  visibility: visible;
+}
+
+/* Chrome-specific animation optimizations */
+@supports (-webkit-appearance: none) {
+  .animate-in {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .slide-in-from-top-2 {
+    -webkit-animation: slideInFromTop 0.3s ease-out;
+    animation: slideInFromTop 0.3s ease-out;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure consistent font rendering across browsers */
+body {
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Chrome-specific scrollbar styling */
+@supports (-webkit-appearance: none) {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

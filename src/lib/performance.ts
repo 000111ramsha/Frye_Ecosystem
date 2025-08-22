@@ -96,7 +96,7 @@ export function initPerformanceObserver(): void {
               domContentLoaded: navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart,
               loadComplete: navEntry.loadEventEnd - navEntry.loadEventStart,
               firstByte: navEntry.responseStart - navEntry.requestStart,
-              domInteractive: navEntry.domInteractive - navEntry.navigationStart
+              domInteractive: navEntry.domInteractive - navEntry.fetchStart
             })
           }
         })
@@ -157,8 +157,8 @@ export async function dynamicImport<T>(
   importFn: () => Promise<{ default: T }>
 ): Promise<T> {
   try {
-    const module = await importFn()
-    return module.default
+    const importedModule = await importFn()
+    return importedModule.default
   } catch (error) {
     console.error('Failed to load module:', error)
     throw error

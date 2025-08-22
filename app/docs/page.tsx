@@ -189,6 +189,8 @@ const sidebarSections: SidebarSection[] = [
 export default function DocsPage() {
   const [activeSection, setActiveSection] = useState("introduction")
   const [expandedMenus, setExpandedMenus] = useState<Set<string>>(new Set())
+  
+
 
   // Handle query parameters for direct navigation
   useEffect(() => {
@@ -216,7 +218,8 @@ export default function DocsPage() {
     if (hasChildren && itemTitle) {
       toggleMenu(itemTitle)
     } else {
-      setActiveSection(href.slice(1))
+      const sectionId = href.slice(1)
+      setActiveSection(sectionId)
     }
   }
 
@@ -284,6 +287,7 @@ export default function DocsPage() {
       {/* Content */}
       <div className="pt-16 min-h-screen lg:pl-64 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-10 py-8">
+
           {/* Hero Section - Only show for non-Core Concepts pages and non-Platform Features pages and non-Resources pages */}
           {!["what-is-nft", "what-is-minting", "how-to-buy-nft", "how-to-sell-nft", "bitcoin-ordinals", "nft-ticketing", "hybridization", "what-is-web3", "metamask-wallet", "coinbase-wallet", "what-is-dao", "what-is-cryptocurrency", "what-is-crypto-wallet", "what-is-blockchain", "compatible-blockchains", "what-is-polygon", "what-is-ethereum", "what-is-bitcoin", "introduction", "getting-started", "frye-token", "promptx", "crispr-vault", "ai-nationverse", "respect-fee", "governance", "books-patents"].includes(activeSection) && (
           <div className="mb-12">

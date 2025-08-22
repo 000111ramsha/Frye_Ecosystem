@@ -27,6 +27,8 @@ export default function Dashboard() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
   const [activeView, setActiveView] = useState("overview")
   
+
+  
   const sidebarItems = [
     { key: "overview", label: "Overview", icon: Home },
     { key: "token-dashboard", label: "Token Dashboard", icon: Coins },
@@ -137,6 +139,7 @@ export default function Dashboard() {
 
       {/* Content */}
       <div className={cn("pt-16 min-h-screen transition-all", isSidebarCollapsed ? "md:pl-16" : "md:pl-64")}> 
+
         {renderContent()}
       </div>
     </>

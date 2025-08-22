@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, Suspense } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -151,7 +151,7 @@ const heroIdeas: HeroIdea[] = [
     items: 9999,
     listed: 4.4,
     change: -11.7,
-    image: "/digital-identity-blockchain.png",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&crop=center",
     icon: Dna,
     category: "Biotechnology",
     verified: true
@@ -166,7 +166,7 @@ const heroIdeas: HeroIdea[] = [
     items: 3200,
     listed: 8.2,
     change: 15.3,
-    image: "/quantum-computing-abstract.png",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop&crop=center",
     icon: Atom,
     category: "Quantum Computing",
     verified: true
@@ -181,7 +181,7 @@ const heroIdeas: HeroIdea[] = [
     items: 5000,
     listed: 6.1,
     change: 12.4,
-    image: "/AI-In-Algorithmic-Trading.jpg",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=center",
     icon: Brain,
     category: "Artificial Intelligence",
     verified: true
@@ -196,7 +196,7 @@ const heroIdeas: HeroIdea[] = [
     items: 12500,
     listed: 3.8,
     change: 48.7,
-    image: "/sustainable-energy-solutions.jpg",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop&crop=center",
     icon: Leaf,
     category: "Environmental Tech",
     verified: true
@@ -211,7 +211,7 @@ const heroIdeas: HeroIdea[] = [
     items: 1800,
     listed: 12.5,
     change: -8.2,
-    image: "/predictive-insights.png",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop&crop=center",
     icon: Rocket,
     category: "Aerospace",
     verified: true
@@ -222,7 +222,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "1",
     name: "BioTech Innovations",
-    avatar: "/digital-identity-blockchain.png",
+    avatar: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=100&h=100&fit=crop&crop=center",
     totalIdeas: 9999,
     floorPrice: 3.62,
     change: 11.7,
@@ -232,7 +232,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "2",
     name: "Quantum Research Labs",
-    avatar: "/quantum-computing-abstract.png",
+    avatar: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=100&h=100&fit=crop&crop=center",
     totalIdeas: 3200,
     floorPrice: 12.79,
     change: 0.8,
@@ -242,7 +242,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "3",
     name: "Neural AI Collective",
-    avatar: "/AI-In-Algorithmic-Trading.jpg",
+    avatar: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=100&h=100&fit=crop&crop=center",
     totalIdeas: 5000,
     floorPrice: 11.59,
     change: 1.7,
@@ -252,7 +252,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "4",
     name: "Climate Tech Solutions",
-    avatar: "/sustainable-energy-solutions.jpg",
+    avatar: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=100&h=100&fit=crop&crop=center",
     totalIdeas: 12500,
     floorPrice: 47.40,
     change: -0.2,
@@ -262,7 +262,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "5",
     name: "Space Innovation Labs",
-    avatar: "/predictive-insights.png",
+    avatar: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=100&h=100&fit=crop&crop=center",
     totalIdeas: 1800,
     floorPrice: 0.03,
     change: 0,
@@ -272,7 +272,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "6",
     name: "Fusion Energy Research",
-    avatar: "/sustainable-energy-solutions.jpg",
+    avatar: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=100&h=100&fit=crop&crop=center",
     totalIdeas: 2400,
     floorPrice: 1.48,
     change: 4.5,
@@ -291,7 +291,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 358.4,
     change: -17.7,
     itemCount: 9999,
-    image: "/digital-identity-blockchain.png",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop&crop=center",
     verified: true
   },
   {
@@ -303,7 +303,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 750.2,
     change: 15.3,
     itemCount: 5000,
-    image: "/AI-In-Algorithmic-Trading.jpg",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=400&fit=crop&crop=center",
     verified: true
   },
   {
@@ -315,7 +315,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 1250.8,
     change: 48.7,
     itemCount: 12500,
-    image: "/sustainable-energy-solutions.jpg",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=400&fit=crop&crop=center",
     verified: true
   },
   {
@@ -327,7 +327,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 892.1,
     change: 12.4,
     itemCount: 3200,
-    image: "/predictive-insights.png",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=400&fit=crop&crop=center",
     verified: true
   }
 ]
@@ -340,7 +340,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 89.95,
     change: -38.4,
     volume: 1250000,
-    image: "/quantum-computing-abstract.png"
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "2",
@@ -349,7 +349,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 9.32,
     change: 58.1,
     volume: 890000,
-    image: "/digital-identity-blockchain.png"
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "3",
@@ -358,7 +358,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 1.78,
     change: 36.8,
     volume: 2100000,
-    image: "/sustainable-energy-solutions.jpg"
+    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "4",
@@ -367,7 +367,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 89.92,
     change: 32.9,
     volume: 675000,
-    image: "/AI-In-Algorithmic-Trading.jpg"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "5",
@@ -376,7 +376,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 1.70,
     change: 30.4,
     volume: 1800000,
-    image: "/digital-identity-blockchain.png"
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "6",
@@ -385,7 +385,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 89.92,
     change: 21.4,
     volume: 920000,
-    image: "/intelligent-analysis.png"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "7",
@@ -394,7 +394,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 45.67,
     change: 18.9,
     volume: 756000,
-    image: "/quantum-computing-abstract.png"
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "8",
@@ -403,7 +403,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 23.45,
     change: 15.2,
     volume: 1420000,
-    image: "/collaborative-tools.png"
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "9",
@@ -412,7 +412,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 156.78,
     change: 12.7,
     volume: 892000,
-    image: "/governance.png"
+    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "10",
@@ -421,7 +421,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 78.23,
     change: 8.4,
     volume: 634000,
-    image: "/AI-In-Algorithmic-Trading.jpg"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "11",
@@ -430,7 +430,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 34.56,
     change: -5.2,
     volume: 987000,
-    image: "/distributed-security.png"
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=80&h=80&fit=crop&crop=center"
   },
   {
     id: "12",
@@ -439,7 +439,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 67.89,
     change: -12.1,
     volume: 543000,
-    image: "/digital-identity-blockchain.png"
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=80&h=80&fit=crop&crop=center"
   }
 ]
 
@@ -450,7 +450,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "Quantum Labs",
     description: "Revolutionary quantum algorithm concepts",
     launchDate: "August 21 at 6:00 AM PDT",
-    image: "/quantum-computing-abstract.png",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop&crop=center",
     category: "Technology"
   },
   {
@@ -459,7 +459,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "BioGenesis",
     description: "Next-generation CRISPR applications",
     launchDate: "August 21 at 10:00 AM PDT",
-    image: "/digital-identity-blockchain.png",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
     category: "Biotechnology"
   },
   {
@@ -468,7 +468,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "SolarTech Inc",
     description: "Advanced photovoltaic innovations",
     launchDate: "August 26 at 12:00 PM PDT",
-    image: "/sustainable-energy-solutions.jpg",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop&crop=center",
     category: "Energy"
   },
   {
@@ -477,7 +477,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "Space Pioneers",
     description: "Comprehensive Mars settlement concepts",
     launchDate: "September 1 at 2:00 PM PDT",
-    image: "/predictive-insights.png",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop&crop=center",
     category: "Aerospace"
   },
   {
@@ -486,7 +486,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "CogniTech",
     description: "Brain-computer interface innovations",
     launchDate: "September 5 at 8:00 AM PDT",
-    image: "/AI-In-Algorithmic-Trading.jpg",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop&crop=center",
     category: "Neuroscience"
   },
   {
@@ -495,7 +495,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "AquaTech",
     description: "Advanced marine pollution solutions",
     launchDate: "September 10 at 11:00 AM PDT",
-    image: "/governance.png",
+    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop&crop=center",
     category: "Environmental"
   },
   {
@@ -504,7 +504,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "Energy Dynamics",
     description: "Compact fusion reactor designs",
     launchDate: "September 15 at 3:00 PM PDT",
-    image: "/sustainable-energy-solutions.jpg",
+    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop&crop=center",
     category: "Energy"
   },
   {
@@ -513,7 +513,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "UrbanTech",
     description: "IoT-enabled city management systems",
     launchDate: "September 20 at 9:00 AM PDT",
-    image: "/rapid-iteration.png",
+    image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?w=400&h=300&fit=crop&crop=center",
     category: "Smart Cities"
   }
 ]
@@ -526,7 +526,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.449,
     change: 173.1,
     volume: 2500000,
-    image: "/digital-identity-blockchain.png"
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=300&fit=crop&crop=center"
   },
   {
     id: "2",
@@ -535,7 +535,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.98,
     change: 102.8,
     volume: 1800000,
-    image: "/distributed-security.png"
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=300&h=300&fit=crop&crop=center"
   },
   {
     id: "3",
@@ -544,7 +544,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.005,
     change: 88.5,
     volume: 3200000,
-    image: "/AI-In-Algorithmic-Trading.jpg"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=300&h=300&fit=crop&crop=center"
   },
   {
     id: "4",
@@ -553,7 +553,7 @@ const topMovers: TopMover[] = [
     floorPrice: 1.234,
     change: 76.4,
     volume: 1600000,
-    image: "/collaborative-tools.png"
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=300&fit=crop&crop=center"
   },
   {
     id: "5",
@@ -562,7 +562,7 @@ const topMovers: TopMover[] = [
     floorPrice: 2.567,
     change: 64.2,
     volume: 1200000,
-    image: "/quantum-computing-abstract.png"
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=300&h=300&fit=crop&crop=center"
   },
   {
     id: "6",
@@ -571,7 +571,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.789,
     change: 55.7,
     volume: 890000,
-    image: "/sustainable-energy-solutions.jpg"
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=300&fit=crop&crop=center"
   }
 ]
 
@@ -589,49 +589,7 @@ const categories = [
   { name: "Manufacturing", icon: Building, count: 7800 }
 ]
 
-// Loading component
-function LoadingFallback() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
-      <div className="flex items-center justify-center h-screen">
-        <div className="text-white">Loading...</div>
-      </div>
-    </div>
-  )
-}
-
-// Error boundary component
-function ErrorBoundary({ children }: { children: React.ReactNode }) {
-  const [hasError, setHasError] = useState(false)
-
-  useEffect(() => {
-    const handleError = (error: ErrorEvent) => {
-      console.error('Error caught by boundary:', error)
-      setHasError(true)
-    }
-
-    window.addEventListener('error', handleError)
-    return () => window.removeEventListener('error', handleError)
-  }, [])
-
-  if (hasError) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center">
-        <div className="text-center text-white">
-          <h2 className="text-xl font-bold mb-4">Something went wrong</h2>
-          <Button onClick={() => window.location.reload()}>
-            Reload Page
-          </Button>
-        </div>
-      </div>
-    )
-  }
-
-  return <>{children}</>
-}
-
-// Main explore page component
-function ExplorePageContent() {
+export default function ExplorePage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [timeRange, setTimeRange] = useState("1d")
@@ -640,20 +598,21 @@ function ExplorePageContent() {
   const [sortBy, setSortBy] = useState("trending")
   const [isAutoPlay, setIsAutoPlay] = useState(true)
   const [showFilters, setShowFilters] = useState(false)
-  // Random-only-after-mount to avoid SSR hydration mismatch
-  const [randomReady, setRandomReady] = useState(false)
+  const [isClient, setIsClient] = useState(false)
+
+  // Prevent hydration mismatch
   useEffect(() => {
-    setRandomReady(true)
+    setIsClient(true)
   }, [])
 
   // Auto-rotate carousel every 5 seconds
   useEffect(() => {
-    if (!isAutoPlay) return
+    if (!isAutoPlay || !isClient) return
     const interval = setInterval(() => {
       setCurrentHeroIndex((prev) => (prev + 1) % heroIdeas.length)
     }, 5000)
     return () => clearInterval(interval)
-  }, [isAutoPlay])
+  }, [isAutoPlay, isClient])
 
   const nextHero = () => {
     setCurrentHeroIndex((prev) => (prev + 1) % heroIdeas.length)
@@ -665,6 +624,17 @@ function ExplorePageContent() {
 
   const currentIdea = heroIdeas[currentHeroIndex]
   const IconComponent = currentIdea.icon
+
+  // Don't render until client-side hydration is complete
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+        <div className="flex items-center justify-center h-screen">
+          <div className="text-white">Loading...</div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
@@ -1315,7 +1285,7 @@ function ExplorePageContent() {
                       <div className="flex items-center gap-2">
                         <Eye className="h-4 w-4 text-slate-400" />
                         <span className="text-xs text-slate-400">
-                          {randomReady ? (Math.floor(Math.random() * 1000) + 500) : 500} watching
+                          {Math.floor(Math.random() * 1000) + 500} watching
                         </span>
                       </div>
                       <Button size="sm" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-4 py-2 text-xs font-semibold transition-all duration-300">
@@ -1523,9 +1493,9 @@ function ExplorePageContent() {
               <CardContent className={`${viewMode === "list" ? "flex-1" : ""} p-4`}>
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex-1">
-                    <h4 className="font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors text-base">
+                    <h3 className="font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors text-base">
                       {collection.name}
-                    </h4>
+                    </h3>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-5 h-5 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 p-0.5">
                         <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
@@ -1559,7 +1529,7 @@ function ExplorePageContent() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-xs text-slate-400">
                     <Activity className="h-3 w-3" />
-                    <span>{randomReady ? (50 + (currentHeroIndex % 50)) : 50} active</span>
+                    <span>{Math.floor(Math.random() * 100) + 50} active</span>
                   </div>
                   <Button size="sm" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white px-4 py-2 text-xs font-semibold transition-all duration-300">
                     Explore
@@ -1607,16 +1577,5 @@ function ExplorePageContent() {
         </div>
       </div>
     </div>
-  )
-}
-
-// Main export with error boundary and suspense
-export default function ExplorePage() {
-  return (
-    <ErrorBoundary>
-      <Suspense fallback={<LoadingFallback />}>
-        <ExplorePageContent />
-      </Suspense>
-    </ErrorBoundary>
   )
 }
