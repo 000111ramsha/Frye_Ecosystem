@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
+// Bundle analyzer temporarily disabled for stability
+// const withBundleAnalyzer = require('@next/bundle-analyzer')({
+//   enabled: process.env.ANALYZE === 'true',
+// })
+
 const nextConfig = {
+  // Basic performance optimizations
+  poweredByHeader: false,
+
+  // Image optimization (stable configuration)
   images: {
     remotePatterns: [
       {
@@ -8,18 +17,7 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
+
       {
         protocol: 'https',
         hostname: 'cdn.jsdelivr.net',
@@ -33,13 +31,14 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    domains: ['images.unsplash.com'],
     unoptimized: false,
     formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+
+  // Simple redirects
   async redirects() {
     return [
       {
@@ -49,13 +48,14 @@ const nextConfig = {
       },
     ]
   },
-  experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-  },
+
+  // Basic compiler optimizations (production only)
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  headers: async () => {
+
+  // Basic security headers
+  async headers() {
     return [
       {
         source: '/(.*)',
@@ -74,15 +74,7 @@ const nextConfig = {
           },
         ],
       },
-      {
-        source: '/images/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
+      // Static assets caching
       {
         source: '/_next/static/(.*)',
         headers: [

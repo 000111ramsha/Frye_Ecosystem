@@ -151,7 +151,7 @@ const heroIdeas: HeroIdea[] = [
     items: 9999,
     listed: 4.4,
     change: -11.7,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&crop=center",
+    image: "/digital-identity-blockchain.png",
     icon: Dna,
     category: "Biotechnology",
     verified: true
@@ -166,7 +166,7 @@ const heroIdeas: HeroIdea[] = [
     items: 3200,
     listed: 8.2,
     change: 15.3,
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop&crop=center",
+    image: "/quantum-computing-abstract.png",
     icon: Atom,
     category: "Quantum Computing",
     verified: true
@@ -181,7 +181,7 @@ const heroIdeas: HeroIdea[] = [
     items: 5000,
     listed: 6.1,
     change: 12.4,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=center",
+    image: "/AI-In-Algorithmic-Trading.jpg",
     icon: Brain,
     category: "Artificial Intelligence",
     verified: true
@@ -196,7 +196,7 @@ const heroIdeas: HeroIdea[] = [
     items: 12500,
     listed: 3.8,
     change: 48.7,
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop&crop=center",
+    image: "/sustainable-energy-solutions.jpg",
     icon: Leaf,
     category: "Environmental Tech",
     verified: true
@@ -211,7 +211,7 @@ const heroIdeas: HeroIdea[] = [
     items: 1800,
     listed: 12.5,
     change: -8.2,
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop&crop=center",
+    image: "/predictive-insights.png",
     icon: Rocket,
     category: "Aerospace",
     verified: true
@@ -222,7 +222,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "1",
     name: "BioTech Innovations",
-    avatar: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=100&h=100&fit=crop&crop=center",
+    avatar: "/digital-identity-blockchain.png",
     totalIdeas: 9999,
     floorPrice: 3.62,
     change: 11.7,
@@ -232,7 +232,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "2",
     name: "Quantum Research Labs",
-    avatar: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=100&h=100&fit=crop&crop=center",
+    avatar: "/quantum-computing-abstract.png",
     totalIdeas: 3200,
     floorPrice: 12.79,
     change: 0.8,
@@ -242,7 +242,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "3",
     name: "Neural AI Collective",
-    avatar: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=100&h=100&fit=crop&crop=center",
+    avatar: "/AI-In-Algorithmic-Trading.jpg",
     totalIdeas: 5000,
     floorPrice: 11.59,
     change: 1.7,
@@ -252,7 +252,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "4",
     name: "Climate Tech Solutions",
-    avatar: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=100&h=100&fit=crop&crop=center",
+    avatar: "/sustainable-energy-solutions.jpg",
     totalIdeas: 12500,
     floorPrice: 47.40,
     change: -0.2,
@@ -262,7 +262,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "5",
     name: "Space Innovation Labs",
-    avatar: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=100&h=100&fit=crop&crop=center",
+    avatar: "/predictive-insights.png",
     totalIdeas: 1800,
     floorPrice: 0.03,
     change: 0,
@@ -272,7 +272,7 @@ const creatorProfiles: CreatorProfile[] = [
   {
     id: "6",
     name: "Fusion Energy Research",
-    avatar: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=100&h=100&fit=crop&crop=center",
+    avatar: "/sustainable-energy-solutions.jpg",
     totalIdeas: 2400,
     floorPrice: 1.48,
     change: 4.5,
@@ -291,7 +291,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 358.4,
     change: -17.7,
     itemCount: 9999,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop&crop=center",
+    image: "/digital-identity-blockchain.png",
     verified: true
   },
   {
@@ -303,7 +303,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 750.2,
     change: 15.3,
     itemCount: 5000,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=400&fit=crop&crop=center",
+    image: "/AI-In-Algorithmic-Trading.jpg",
     verified: true
   },
   {
@@ -315,7 +315,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 1250.8,
     change: 48.7,
     itemCount: 12500,
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=400&fit=crop&crop=center",
+    image: "/sustainable-energy-solutions.jpg",
     verified: true
   },
   {
@@ -327,7 +327,7 @@ const featuredCollections: IdeaCollection[] = [
     volume: 892.1,
     change: 12.4,
     itemCount: 3200,
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=400&fit=crop&crop=center",
+    image: "/predictive-insights.png",
     verified: true
   }
 ]
@@ -340,7 +340,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 89.95,
     change: -38.4,
     volume: 1250000,
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=80&h=80&fit=crop&crop=center"
+    image: "/quantum-computing-abstract.png"
   },
   {
     id: "2",
@@ -349,7 +349,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 9.32,
     change: 58.1,
     volume: 890000,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=80&h=80&fit=crop&crop=center"
+    image: "/digital-identity-blockchain.png"
   },
   {
     id: "3",
@@ -358,7 +358,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 1.78,
     change: 36.8,
     volume: 2100000,
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=80&h=80&fit=crop&crop=center"
+    image: "/sustainable-energy-solutions.jpg"
   },
   {
     id: "4",
@@ -367,7 +367,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 89.92,
     change: 32.9,
     volume: 675000,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=80&h=80&fit=crop&crop=center"
+    image: "/AI-In-Algorithmic-Trading.jpg"
   },
   {
     id: "5",
@@ -376,7 +376,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 1.70,
     change: 30.4,
     volume: 1800000,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=80&h=80&fit=crop&crop=center"
+    image: "/digital-identity-blockchain.png"
   },
   {
     id: "6",
@@ -385,7 +385,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 89.92,
     change: 21.4,
     volume: 920000,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=center"
+    image: "/intelligent-analysis.png"
   },
   {
     id: "7",
@@ -394,7 +394,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 45.67,
     change: 18.9,
     volume: 756000,
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=80&h=80&fit=crop&crop=center"
+    image: "/quantum-computing-abstract.png"
   },
   {
     id: "8",
@@ -403,7 +403,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 23.45,
     change: 15.2,
     volume: 1420000,
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=80&h=80&fit=crop&crop=center"
+    image: "/collaborative-tools.png"
   },
   {
     id: "9",
@@ -412,7 +412,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 156.78,
     change: 12.7,
     volume: 892000,
-    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=80&h=80&fit=crop&crop=center"
+    image: "/governance.png"
   },
   {
     id: "10",
@@ -421,7 +421,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 78.23,
     change: 8.4,
     volume: 634000,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=80&h=80&fit=crop&crop=center"
+    image: "/AI-In-Algorithmic-Trading.jpg"
   },
   {
     id: "11",
@@ -430,7 +430,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 34.56,
     change: -5.2,
     volume: 987000,
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=80&h=80&fit=crop&crop=center"
+    image: "/distributed-security.png"
   },
   {
     id: "12",
@@ -439,7 +439,7 @@ const trendingIdeas: TrendingIdea[] = [
     price: 67.89,
     change: -12.1,
     volume: 543000,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=80&h=80&fit=crop&crop=center"
+    image: "/digital-identity-blockchain.png"
   }
 ]
 
@@ -450,7 +450,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "Quantum Labs",
     description: "Revolutionary quantum algorithm concepts",
     launchDate: "August 21 at 6:00 AM PDT",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop&crop=center",
+    image: "/quantum-computing-abstract.png",
     category: "Technology"
   },
   {
@@ -459,7 +459,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "BioGenesis",
     description: "Next-generation CRISPR applications",
     launchDate: "August 21 at 10:00 AM PDT",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
+    image: "/digital-identity-blockchain.png",
     category: "Biotechnology"
   },
   {
@@ -468,7 +468,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "SolarTech Inc",
     description: "Advanced photovoltaic innovations",
     launchDate: "August 26 at 12:00 PM PDT",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop&crop=center",
+    image: "/sustainable-energy-solutions.jpg",
     category: "Energy"
   },
   {
@@ -477,7 +477,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "Space Pioneers",
     description: "Comprehensive Mars settlement concepts",
     launchDate: "September 1 at 2:00 PM PDT",
-    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop&crop=center",
+    image: "/predictive-insights.png",
     category: "Aerospace"
   },
   {
@@ -486,7 +486,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "CogniTech",
     description: "Brain-computer interface innovations",
     launchDate: "September 5 at 8:00 AM PDT",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop&crop=center",
+    image: "/AI-In-Algorithmic-Trading.jpg",
     category: "Neuroscience"
   },
   {
@@ -495,7 +495,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "AquaTech",
     description: "Advanced marine pollution solutions",
     launchDate: "September 10 at 11:00 AM PDT",
-    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop&crop=center",
+    image: "/governance.png",
     category: "Environmental"
   },
   {
@@ -504,7 +504,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "Energy Dynamics",
     description: "Compact fusion reactor designs",
     launchDate: "September 15 at 3:00 PM PDT",
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop&crop=center",
+    image: "/sustainable-energy-solutions.jpg",
     category: "Energy"
   },
   {
@@ -513,7 +513,7 @@ const featuredDrops: FeaturedDrop[] = [
     creator: "UrbanTech",
     description: "IoT-enabled city management systems",
     launchDate: "September 20 at 9:00 AM PDT",
-    image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?w=400&h=300&fit=crop&crop=center",
+    image: "/rapid-iteration.png",
     category: "Smart Cities"
   }
 ]
@@ -526,7 +526,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.449,
     change: 173.1,
     volume: 2500000,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=300&fit=crop&crop=center"
+    image: "/digital-identity-blockchain.png"
   },
   {
     id: "2",
@@ -535,7 +535,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.98,
     change: 102.8,
     volume: 1800000,
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=300&h=300&fit=crop&crop=center"
+    image: "/distributed-security.png"
   },
   {
     id: "3",
@@ -544,7 +544,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.005,
     change: 88.5,
     volume: 3200000,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=300&h=300&fit=crop&crop=center"
+    image: "/AI-In-Algorithmic-Trading.jpg"
   },
   {
     id: "4",
@@ -553,7 +553,7 @@ const topMovers: TopMover[] = [
     floorPrice: 1.234,
     change: 76.4,
     volume: 1600000,
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=300&fit=crop&crop=center"
+    image: "/collaborative-tools.png"
   },
   {
     id: "5",
@@ -562,7 +562,7 @@ const topMovers: TopMover[] = [
     floorPrice: 2.567,
     change: 64.2,
     volume: 1200000,
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=300&h=300&fit=crop&crop=center"
+    image: "/quantum-computing-abstract.png"
   },
   {
     id: "6",
@@ -571,7 +571,7 @@ const topMovers: TopMover[] = [
     floorPrice: 0.789,
     change: 55.7,
     volume: 890000,
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=300&fit=crop&crop=center"
+    image: "/sustainable-energy-solutions.jpg"
   }
 ]
 

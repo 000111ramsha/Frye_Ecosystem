@@ -3,10 +3,9 @@ import type { Metadata, Viewport } from "next"
 import { Montserrat } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
-// Temporarily disabled for debugging
-// import PerformanceMonitor from "@/components/PerformanceMonitor"
-// import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration"
-// import CacheInitializer from "@/components/CacheInitializer"
+import PerformanceMonitor from "@/components/PerformanceMonitor"
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration"
+import CacheInitializer from "@/components/CacheInitializer"
 import Script from "next/script"
 
 const montserrat = Montserrat({
@@ -80,8 +79,8 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0f172a" />
 
-        {/* Performance optimization script temporarily disabled */}
-        {/* <Script
+        {/* Performance optimization script */}
+        <Script
           id="critical-optimizations"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -106,13 +105,12 @@ export default function RootLayout({
               }
             `
           }}
-        /> */}
+        />
       </head>
       <body className={montserrat.className}>
-        {/* Temporarily disabled for debugging */}
-        {/* <ServiceWorkerRegistration /> */}
-        {/* <CacheInitializer /> */}
-        {/* <PerformanceMonitor /> */}
+        <ServiceWorkerRegistration />
+        <CacheInitializer />
+        <PerformanceMonitor />
         <Navigation />
         <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">{children}</main>
       </body>

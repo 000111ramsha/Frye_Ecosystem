@@ -1,0 +1,75 @@
+{
+  "name": "FRYE Ecosystem - Transform Ideas into Liquid Assets",
+  "short_name": "FRYE Ecosystem",
+  "description": "Next-generation platform for digital innovation and IP monetization powered by AI-Overseer and blockchain technology",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Innovation Vault",
+      "short_name": "Vault",
+      "description": "Browse and explore innovations",
+      "url": "/innovation-vault",
+      "icons": [
+        {
+          "src": "/icon-192.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Submit Idea",
+      "short_name": "Submit",
+      "description": "Submit your innovation",
+      "url": "/idea-submission",
+      "icons": [
+        {
+          "src": "/icon-192.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Token Dashboard",
+      "short_name": "Dashboard",
+      "description": "Manage your tokens",
+      "url": "/token-dashboard",
+      "icons": [
+        {
+          "src": "/icon-192.svg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

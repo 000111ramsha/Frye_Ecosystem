@@ -1,47 +1,89 @@
 "use client"
 
 import { useEffect } from 'react'
-import { logMemoryUsage } from '@/lib/performance'
+import { logMemoryUsage, reportWebVitals, initPerformanceObserver } from '@/lib/performance'
 
 const PerformanceMonitor = () => {
   useEffect(() => {
-    // Monitor Core Web Vitals
+    // Initialize comprehensive performance monitoring
     if (typeof window !== 'undefined' && 'performance' in window) {
-      // First Contentful Paint
+      // Initialize performance observers
+      initPerformanceObserver()
+
+      // Monitor Core Web Vitals
       const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries()
         entries.forEach((entry) => {
           if (process.env.NODE_ENV === 'development') {
-            console.log(`${entry.name}: ${entry.startTime}ms`)
+            console.log(`${entry.name}: ${Math.round(entry.startTime)}ms`)
+          }
+
+          // Report to analytics in production
+          if (process.env.NODE_ENV === 'production') {
+            reportWebVitals({
+              name: entry.name,
+              value: entry.startTime,
+              id: entry.entryType,
+              delta: entry.duration || 0
+            })
           }
         })
       })
 
-      observer.observe({ entryTypes: ['navigation', 'paint', 'largest-contentful-paint'] })
+      observer.observe({
+        entryTypes: ['navigation', 'paint', 'largest-contentful-paint', 'first-input', 'layout-shift']
+      })
 
       // Log memory usage in development
       if (process.env.NODE_ENV === 'development') {
         const interval = setInterval(logMemoryUsage, 30000) // Every 30 seconds
-        return () => clearInterval(interval)
+        return () => {
+          clearInterval(interval)
+          observer.disconnect()
+        }
       }
 
       return () => observer.disconnect()
     }
   }, [])
 
-  // Report Web Vitals to analytics (if needed)
+  // Monitor page visibility changes for performance optimization
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Custom analytics integration can go here
-      const reportWebVitals = (metric: any) => {
-        if (process.env.NODE_ENV === 'production') {
-          // Send to analytics service
-          console.log(metric)
+    if (typeof document !== 'undefined') {
+      const handleVisibilityChange = () => {
+        if (document.hidden) {
+          // Page is hidden, pause non-critical operations
+          console.log('Page hidden - pausing non-critical operations')
+        } else {
+          // Page is visible, resume operations
+          console.log('Page visible - resuming operations')
         }
       }
 
-      // Example: report CLS, FID, FCP, LCP, TTFB
-      // This would typically integrate with your analytics service
+      document.addEventListener('visibilitychange', handleVisibilityChange)
+      return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [])
+
+  // Monitor connection quality
+  useEffect(() => {
+    if (typeof navigator !== 'undefined' && 'connection' in navigator) {
+      const connection = (navigator as any).connection
+      if (connection) {
+        const logConnectionInfo = () => {
+          console.log('Connection Info:', {
+            effectiveType: connection.effectiveType,
+            downlink: connection.downlink,
+            rtt: connection.rtt,
+            saveData: connection.saveData
+          })
+        }
+
+        logConnectionInfo()
+        connection.addEventListener('change', logConnectionInfo)
+
+        return () => connection.removeEventListener('change', logConnectionInfo)
+      }
     }
   }, [])
 

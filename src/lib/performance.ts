@@ -55,6 +55,87 @@ export function measurePerformance(name: string, fn: () => void): void {
   }
 }
 
+// Memory usage monitoring
+export function logMemoryUsage(): void {
+  if (typeof window !== 'undefined' && 'performance' in window && 'memory' in performance) {
+    const memory = (performance as any).memory
+    console.log('Memory Usage:', {
+      used: `${Math.round(memory.usedJSHeapSize / 1048576)} MB`,
+      total: `${Math.round(memory.totalJSHeapSize / 1048576)} MB`,
+      limit: `${Math.round(memory.jsHeapSizeLimit / 1048576)} MB`
+    })
+  }
+}
+
+// Core Web Vitals monitoring
+export function reportWebVitals(metric: any): void {
+  if (process.env.NODE_ENV === 'production') {
+    // In production, you would send this to your analytics service
+    console.log('Web Vital:', metric)
+
+    // Example: Send to Google Analytics
+    // gtag('event', metric.name, {
+    //   value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+    //   event_label: metric.id,
+    //   non_interaction: true,
+    // })
+  }
+}
+
+// Performance observer for monitoring various metrics
+export function initPerformanceObserver(): void {
+  if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+    try {
+      // Monitor navigation timing
+      const navObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries()
+        entries.forEach((entry) => {
+          if (entry.entryType === 'navigation') {
+            const navEntry = entry as PerformanceNavigationTiming
+            console.log('Navigation Timing:', {
+              domContentLoaded: navEntry.domContentLoadedEventEnd - navEntry.domContentLoadedEventStart,
+              loadComplete: navEntry.loadEventEnd - navEntry.loadEventStart,
+              firstByte: navEntry.responseStart - navEntry.requestStart,
+              domInteractive: navEntry.domInteractive - navEntry.navigationStart
+            })
+          }
+        })
+      })
+      navObserver.observe({ entryTypes: ['navigation'] })
+
+      // Monitor resource timing
+      const resourceObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries()
+        entries.forEach((entry) => {
+          if (entry.duration > 100) { // Only log slow resources
+            console.log('Slow Resource:', {
+              name: entry.name,
+              duration: Math.round(entry.duration),
+              size: (entry as any).transferSize || 'unknown'
+            })
+          }
+        })
+      })
+      resourceObserver.observe({ entryTypes: ['resource'] })
+
+      // Monitor long tasks
+      const longTaskObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries()
+        entries.forEach((entry) => {
+          console.warn('Long Task detected:', {
+            duration: Math.round(entry.duration),
+            startTime: Math.round(entry.startTime)
+          })
+        })
+      })
+      longTaskObserver.observe({ entryTypes: ['longtask'] })
+
+    } catch (error) {
+      console.error('Performance Observer initialization failed:', error)
+    }
+  }
+}
+
 // Image preloader for critical images
 export function preloadImage(src: string): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -84,14 +165,4 @@ export async function dynamicImport<T>(
   }
 }
 
-// Memory usage monitoring (development only)
-export function logMemoryUsage(): void {
-  if (process.env.NODE_ENV === 'development' && 'memory' in performance) {
-    const memInfo = (performance as any).memory
-    console.log({
-      usedJSHeapSize: `${Math.round(memInfo.usedJSHeapSize / 1048576)} MB`,
-      totalJSHeapSize: `${Math.round(memInfo.totalJSHeapSize / 1048576)} MB`,
-      jsHeapSizeLimit: `${Math.round(memInfo.jsHeapSizeLimit / 1048576)} MB`,
-    })
-  }
-}
+

@@ -21,8 +21,8 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-// import ScrollToTopButton from "@/components/ScrollToTopButton" // Temporarily disabled to fix hydration
-// import OptimizedImage from "@/components/optimized/OptimizedImage" // Removed to fix hydration issues
+import ScrollToTopButton from "@/components/ScrollToTopButton"
+import OptimizedImage from "@/components/optimized/OptimizedImage"
 
 export default function HomePage() {
   // Mock data for the innovation counter
@@ -178,13 +178,14 @@ export default function HomePage() {
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
                 <div className="h-64 overflow-hidden p-4 relative">
-                  <Image
+                  <OptimizedImage
                     src="/minting.png"
                     alt="Minting"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300"
                     priority
+                    progressive
                   />
                 </div>
                 <div className="p-4">
@@ -198,12 +199,14 @@ export default function HomePage() {
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
                 <div className="h-64 overflow-hidden p-4 relative">
-                  <Image
+                  <OptimizedImage
                     src="/earn-frye.png"
                     alt="Earn FRYE"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover rounded-lg"
+                    priority
+                    progressive
                   />
                 </div>
                 <div className="p-4">
@@ -217,12 +220,14 @@ export default function HomePage() {
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
               <div className="h-full flex flex-col">
                 <div className="h-64 overflow-hidden p-4 relative">
-                  <Image
+                  <OptimizedImage
                     src="/premium-access.png"
                     alt="Premium Access"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300"
+                    priority
+                    progressive
                   />
                 </div>
                 <div className="p-4">
@@ -845,7 +850,7 @@ export default function HomePage() {
       </footer>
 
       {/* Scroll to Top Button */}
-      {/* <ScrollToTopButton /> */}
+      <ScrollToTopButton />
     </div>
   )
 }
