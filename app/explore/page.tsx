@@ -828,10 +828,10 @@ function ExplorePageContent() {
       {/* Enhanced Hero Section with Carousel + Sidebar */}
       <div className="relative">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-6">
+          <div className="flex flex-col lg:flex-row gap-6 items-stretch">
             {/* Left: Enhanced Hero Carousel */}
             <div className="flex-1">
-              <div className="relative bg-gradient-to-r from-slate-900/90 to-blue-900/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 overflow-hidden group">
+              <div className="relative bg-gradient-to-r from-slate-900/90 to-blue-900/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 overflow-hidden group h-full">
                 {/* Background Image */}
                 <div className="absolute inset-0">
                   <Image
@@ -1063,7 +1063,7 @@ function ExplorePageContent() {
       </div>
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-4 pt-8 pb-8">
+      <div className="max-w-7xl mx-auto px-4 pt-12 pb-8">
         {/* Top Collections */}
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold text-white">Featured Collections</h2>
@@ -1090,7 +1090,7 @@ function ExplorePageContent() {
         </div>
 
         {/* Collections ranking list */}
-        <div className="grid gap-3 mb-8">
+        <div className="grid gap-3 mb-12">
           {featuredCollections.map((collection, index) => (
             <Card key={collection.id} className="bg-slate-900/70 backdrop-blur border border-slate-700/50 hover:border-slate-600 transition-colors">
               <CardContent className="p-4">
@@ -1151,7 +1151,7 @@ function ExplorePageContent() {
         </div>
 
         {/* Enhanced Trending Ideas */}
-        <div className="mb-8">
+        <div className="mb-12">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
@@ -1243,7 +1243,7 @@ function ExplorePageContent() {
         </div>
 
         {/* Enhanced Featured Drops */}
-        <div className="mb-8">
+        <div className="mb-12">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
@@ -1330,7 +1330,7 @@ function ExplorePageContent() {
         </div>
 
         {/* Top Movers Today */}
-        <div className="mb-8">
+        <div className="mb-12">
           <h2 className="text-xl font-bold text-white mb-2">Top Movers Today</h2>
           <p className="text-slate-400 text-sm mb-4">Largest floor price change in the past day</p>
           

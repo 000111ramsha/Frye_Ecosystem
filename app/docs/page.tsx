@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -193,7 +193,7 @@ export default function DocsPage() {
 
 
   // Handle query parameters for direct navigation
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search)
       const section = urlParams.get('section')
@@ -237,16 +237,16 @@ export default function DocsPage() {
                 <div className="space-y-1">
                   {section.items.map((item) => (
                     <div key={item.href}>
-                    <button
+                      <button
                         onClick={() => handleItemClick(item.href, !!item.children, item.title)}
-                      className={`flex items-center w-full px-3 py-2 text-sm rounded-lg transition-colors ${
-                        activeSection === item.href.slice(1)
-                          ? "bg-slate-800/60 text-cyan-300 shadow-lg shadow-cyan-500/20"
-                          : "text-slate-300 hover:text-cyan-300 hover:bg-slate-800/50"
-                      }`}
-                    >
-                      <item.icon className="h-4 w-4 mr-3" />
-                      {item.title}
+                        className={`flex items-center w-full px-3 py-2 text-sm rounded-lg transition-colors ${
+                          activeSection === item.href.slice(1)
+                            ? "bg-slate-800/60 text-cyan-300 shadow-lg shadow-cyan-500/20"
+                            : "text-slate-300 hover:text-cyan-300 hover:bg-slate-800/50"
+                        }`}
+                      >
+                        <item.icon className="h-4 w-4 mr-3" />
+                        {item.title}
                         {item.children && (
                           <div className="ml-auto">
                             {expandedMenus.has(item.title) ? (
