@@ -20,8 +20,26 @@ import {
   Smartphone,
 } from "lucide-react"
 
+interface FormData {
+  name: string
+  email: string
+  phone: string
+  language: string
+  theme: string
+  notifications: {
+    email: boolean
+    push: boolean
+    sms: boolean
+  }
+  privacy: {
+    profile: string
+    activity: string
+    analytics: boolean
+  }
+}
+
 export default function SettingsContent() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "John Doe",
     email: "john@example.com",
     phone: "+1 (555) 123-4567",
@@ -42,13 +60,15 @@ export default function SettingsContent() {
   const handleInputChange = (field: string, value: any) => {
     if (field.includes(".")) {
       const [section, key] = field.split(".")
-      setFormData(prev => ({
-        ...prev,
-        [section]: {
-          ...prev[section as keyof typeof prev],
-          [key]: value
-        }
-      }))
+      if (section === "notifications" || section === "privacy") {
+        setFormData(prev => ({
+          ...prev,
+          [section]: {
+            ...(prev[section] as Record<string, any>),
+            [key]: value
+          }
+        }))
+      }
     } else {
       setFormData(prev => ({ ...prev, [field]: value }))
     }
