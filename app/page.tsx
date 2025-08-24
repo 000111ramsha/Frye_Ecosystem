@@ -128,7 +128,7 @@ export default function HomePage() {
             <h2 className="text-5xl font-bold gradient-text mb-6">$FRYE Token Ecosystem</h2>
             <div className="max-w-4xl mx-auto mb-8">
               <p className="text-xl text-slate-300 leading-relaxed mb-6">
-                Invest in $FRYE on Polygon ($10 = 1,000 $FRYE) to unlock PromptX, Patent & Trademark Forms, White
+                Purchase $FRYE utility tokens ($10 = 1,000 $FRYE) to unlock PromptX, Patent & Trademark Forms, White
                 Papers, Pitch Decks, CRISPR Eternity Vault, NFT minting, timestamping, and hybridization tools. $FRYE is
                 not directly linked to cryptocurrency.
               </p>
@@ -164,7 +164,7 @@ export default function HomePage() {
                       <div className="w-6 h-6 mr-3 bg-white rounded-full flex items-center justify-center">
                         <span className="text-purple-600 font-bold text-sm">P</span>
                       </div>
-                      Invest in $FRYE on Polygon
+                      Purchase $FRYE Utility Tokens
                     </div>
                   </Button>
                 </CardContent>

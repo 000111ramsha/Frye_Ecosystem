@@ -63,7 +63,7 @@ export default function JoinUs() {
             Join the Future of Innovation
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
-            Sign up to invest in $FRYE on Polygon ($10 = 1,000 $FRYE) and unlock PromptX, CRISPR Eternity Vault, Patent
+            Sign up to purchase $FRYE utility tokens ($10 = 1,000 $FRYE) and unlock PromptX, CRISPR Eternity Vault, Patent
             Forms, White Papers, Pitch Decks, and more, without direct crypto linkage. Earn 1 $FRYE per minted idea with
             a unique serial number, capped at 500M tokens, and Respect Fees when others hybridize your ideas.
           </p>

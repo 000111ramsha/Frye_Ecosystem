@@ -3,7 +3,6 @@
 import { useState } from "react"
 import {
   Coins,
-  FileText,
   Handshake,
   Sparkles,
   Home,
@@ -22,6 +21,7 @@ import TokenDashboardContent from "@/components/dashboard/TokenDashboardContent"
 import InnovationVaultContent from "@/components/dashboard/InnovationVaultContent"
 import IdeaSubmissionContent from "@/components/dashboard/IdeaSubmissionContent"
 import SnapshotDAOContent from "@/components/dashboard/SnapshotDAOContent"
+import SettingsContent from "@/components/dashboard/SettingsContent"
 
 export default function Dashboard() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
@@ -36,7 +36,6 @@ export default function Dashboard() {
     { key: "idea-submission", label: "Idea Submission", icon: Sparkles },
     { key: "snapshot-dao", label: "Snapshot DAO", icon: Vote },
     { key: "respect-fees", label: "Respect Fees", icon: Handshake },
-    { key: "ip-tools", label: "IP Tools", icon: FileText },
     { key: "settings", label: "Settings", icon: Settings },
   ] as const
 
@@ -54,10 +53,8 @@ export default function Dashboard() {
         return <SnapshotDAOContent />
       case "respect-fees":
         return <TokenDashboardContent /> // Reuse token dashboard for now
-      case "ip-tools":
-        return <TokenDashboardContent /> // Reuse token dashboard for now
       case "settings":
-        return <DashboardOverview /> // Reuse overview for now
+        return <SettingsContent />
       default:
         return <DashboardOverview />
     }

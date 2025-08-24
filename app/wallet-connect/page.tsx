@@ -281,7 +281,7 @@ export default function WalletConnect() {
                         <span className="text-cyan-400 font-bold text-sm">1</span>
                       </div>
                       <div>
-                        <p className="text-white font-medium text-sm">Invest in $FRYE</p>
+                        <p className="text-white font-medium text-sm">Purchase $FRYE</p>
                         <p className="text-slate-400 text-xs">$10 = 1,000 $FRYE</p>
                       </div>
                     </div>

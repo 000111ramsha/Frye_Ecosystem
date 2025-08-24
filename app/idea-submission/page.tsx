@@ -315,7 +315,7 @@ export default function IdeaSubmission() {
                                   </div>
                                 </h4>
                                 <p className="text-slate-300 text-sm">
-                                  Invest $FRYE on Polygon to mint and timestamp your idea as an NFT or add to CRISPR
+                                  Purchase $FRYE utility tokens to mint and timestamp your idea as an NFT or add to CRISPR
                                   Vault ($10 = 1,000 $FRYE). Earn 1 $FRYE with serial number FRYE-XXXXXXX (500M cap).
                                   Receive Respect Fees when others hybridize your idea.
                                 </p>
@@ -354,7 +354,7 @@ export default function IdeaSubmission() {
                   </CardTitle>
                   <CardDescription className="text-slate-300 leading-relaxed">
                     PromptX delivers AI-powered prompts across 75+ sectors. Unlock with $FRYE ($10 = 1,000 $FRYE)
-                    invested on Polygon, not directly linked to crypto. Mint your idea to earn 1 $FRYE with a unique
+                    utility tokens, not directly linked to crypto. Mint your idea to earn 1 $FRYE with a unique
                     serial number (e.g., FRYE-000000001), capped at 500M. Pay Respect Fees to hybridize existing ideas.
                   </CardDescription>
                 </CardHeader>
