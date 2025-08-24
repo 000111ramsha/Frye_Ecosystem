@@ -127,11 +127,10 @@ export default function TokenEconomicsSection() {
                   Utility $FRYE (Platform Token)
                 </h3>
                 <ul className="text-slate-300 space-y-2 text-sm">
-                  <li>• Non-crypto utility token</li>
-                  <li>• Purchased with fiat currency ($10 = 1,000 $FRYE)</li>
-                  <li>• Used for platform actions and access</li>
-                  <li>• Held in internal LUHPHOL account</li>
-                  <li>• No external trading</li>
+                  <li>• Fiat-based token (purchased with $10 = 1,000 $FRYE)</li>
+                  <li>• Fuels platform actions and feature access</li>
+                  <li>• Stored in an internal LUHPHOL wallet (off-chain)</li>
+                  <li>• Not externally tradable</li>
                   <li>• Flexible entry point (10 to 1,000 tokens)</li>
                 </ul>
               </div>
@@ -143,11 +142,11 @@ export default function TokenEconomicsSection() {
                 </h3>
                 <ul className="text-slate-300 space-y-2 text-sm">
                   <li>• Blockchain-based token on Polygon</li>
-                  <li>• Minted automatically when ideas are created</li>
+                  <li>• Minted automatically when new innovations are created</li>
                   <li>• 1 token = 1 minted innovation</li>
-                  <li>• Held in crypto wallets (MetaMask, etc.)</li>
-                  <li>• Tradable on Polygon network</li>
-                  <li>• 500 million hard cap</li>
+                  <li>• Stored in external crypto wallets (MetaMask, etc.)</li>
+                  <li>• Tradable on the Polygon network</li>
+                  <li>• Fixed supply: capped at 500 million</li>
                 </ul>
               </div>
             </div>
@@ -398,38 +397,6 @@ export default function TokenEconomicsSection() {
                 </ul>
               </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Token Comparison Table */}
-      <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl">
-        <CardHeader>
-          <CardTitle className="text-white text-xl">Token Feature Comparison</CardTitle>
-          <CardDescription className="text-slate-300">
-            Understanding the differences between Utility and Innovation $FRYE tokens
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="text-left text-white font-semibold py-3 px-4">Features</th>
-                  <th className="text-left text-cyan-300 font-semibold py-3 px-4">Utility $FRYE</th>
-                  <th className="text-left text-purple-300 font-semibold py-3 px-4">Innovation $FRYE</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tokenComparison.map((row, index) => (
-                  <tr key={index} className="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
-                    <td className="py-3 px-4 text-slate-300 font-medium">{row.feature}</td>
-                    <td className="py-3 px-4 text-slate-300">{row.utility}</td>
-                    <td className="py-3 px-4 text-slate-300">{row.innovation}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </CardContent>
       </Card>

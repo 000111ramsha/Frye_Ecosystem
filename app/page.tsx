@@ -18,9 +18,12 @@ import {
   Sparkles,
   Users,
   Layers,
+  ArrowUp,
+  ChevronDown,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 // import ScrollToTopButton from "@/components/ScrollToTopButton" // Temporarily disabled to fix hydration
 // import OptimizedImage from "@/components/optimized/OptimizedImage" // Removed to fix hydration issues
 
@@ -29,6 +32,33 @@ export default function HomePage() {
   const innovationsMinted = 12750000  // More realistic early adoption number
   const maxInnovations = 500000000
   const progressPercentage = (innovationsMinted / maxInnovations) * 100
+
+  // State for scroll-to-top button visibility
+  const [showScrollToTop, setShowScrollToTop] = useState(false)
+
+  // State for FAQ accordion toggles
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+
+  // Handle scroll event to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setShowScrollToTop(scrollTop > 300) // Show button after scrolling 300px
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // Toggle FAQ accordion
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index)
+  }
 
   return (
     <div className="pt-16">
@@ -128,15 +158,10 @@ export default function HomePage() {
             <h2 className="text-5xl font-bold gradient-text mb-6">$FRYE Token Ecosystem</h2>
             <div className="max-w-4xl mx-auto mb-8">
               <p className="text-xl text-slate-300 leading-relaxed mb-6">
-                Purchase $FRYE utility tokens ($10 = 1,000 $FRYE) to unlock PromptX, Patent & Trademark Forms, White
-                Papers, Pitch Decks, CRISPR Eternity Vault, NFT minting, timestamping, and hybridization tools. $FRYE is
-                not directly linked to cryptocurrency.
+              Purchase $FRYE utility tokens ($10 = 1,000 $FRYE) to access PromptX, Patent & Trademark Forms, White Papers, Pitch Decks, Eternity Vaults, NFT minting, timestamping, and hybridization tools. Each innovation minted is tied to a $FRYE crypto token on Polygon through a smart contract, securing ownership, originality, and royalties.
               </p>
               <p className="text-lg text-slate-400 leading-relaxed">
-                Every original idea minted on LUHPHOL.com creates 1 $FRYE token with a unique serial number (e.g.,
-                FRYE-000000001), capped at 500M, ensuring proof-of-creation, verifiable scarcity, tradeable IP, and a
-                traceable ecosystem. Pay Respect Fees in $FRYE to hybridize existing innovations, fostering a
-                collaborative economy.
+              Every original idea on LUHPHOL.com creates a unique $FRYE token with a serial number, capped at 500M, ensuring verifiable scarcity, tradeable IP, and a traceable ecosystem. Pay Respect Fees in $FRYE to hybridize innovations, fostering a collaborative economy.
               </p>
             </div>
 
@@ -747,18 +772,31 @@ export default function HomePage() {
                 answer: "AI NationVerse is a virtual world where your minted ideas become thriving businesses. You need at least 1 FRYE token to access it. Your NFT ideas can become virtual enterprises like food trucks or shops, with real-world monetization through integrated APIs."
               }
             ].map((faq, index) => (
-              <Card key={index} className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-4 flex items-start">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <span className="text-white font-bold text-sm">Q</span>
+              <Card key={index} className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl overflow-hidden">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full p-6 text-left hover:bg-slate-800/30 transition-colors duration-200"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-bold text-white flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                        <span className="text-white font-bold text-sm">Q</span>
+                      </div>
+                      {faq.question}
+                    </h3>
+                    <div className={`ml-4 transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : 'rotate-0'}`}>
+                      <ChevronDown className="h-6 w-6 text-slate-400" />
                     </div>
-                    {faq.question}
-                  </h3>
-                  <div className="ml-12">
+                  </div>
+                </button>
+                
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="px-6 pb-6 ml-12">
                     <p className="text-slate-300 leading-relaxed">{faq.answer}</p>
                   </div>
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>
@@ -843,6 +881,17 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Scroll to Top Button */}
+      {showScrollToTop && (
+        <Button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 animate-in slide-in-from-bottom-2"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </Button>
+      )}
 
       {/* Scroll to Top Button */}
       {/* <ScrollToTopButton /> */}
