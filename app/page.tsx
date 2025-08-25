@@ -87,7 +87,7 @@ export default function HomePage() {
             Liquid Assets
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-200 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed text-shadow px-2">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed text-shadow px-2">
             The revolutionary platform for digital innovation and IP monetization powered by AI-Overseer and blockchain
             technology. Join the future of intellectual property management.
           </p>
@@ -134,13 +134,13 @@ export default function HomePage() {
       {/* Executive Summary */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 section-bg">
         <div className="max-w-6xl mx-auto">
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl p-4 sm:p-6 rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl">
-            <CardHeader className="text-center pb-6 sm:pb-8">
-              <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">Executive Summary</CardTitle>
-              <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full"></div>
+          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl p-3 sm:p-4 md:p-6 rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl">
+            <CardHeader className="text-center pb-4 sm:pb-6 md:pb-8">
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6">Executive Summary</CardTitle>
+              <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full"></div>
             </CardHeader>
-            <CardContent>
-              <p className="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed text-center max-w-4xl mx-auto px-2">
+            <CardContent className="px-3 sm:px-4 md:px-6">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-200 leading-relaxed text-center max-w-4xl mx-auto">
                 The FRYE Ecosystem revolutionizes intellectual property management through AI-powered oversight,
                 blockchain integration, and tokenization. Our platform enables creators to transform ideas into liquid
                 digital assets, facilitating seamless licensing, governance, and monetization across multiple blockchain
@@ -179,7 +179,7 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex justify-center mb-4 sm:mb-6">
-                    <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold text-center">
+                    <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-xs md:text-sm font-semibold text-center max-w-fit">
                       Respect Fee Protocol™ Powered by $FRYE
                     </Badge>
                   </div>

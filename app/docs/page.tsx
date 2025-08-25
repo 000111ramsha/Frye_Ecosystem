@@ -416,12 +416,12 @@ export default function DocsPage() {
           {/* Introduction Page - Show only the heading without badge, cards, and framework section */}
           {activeSection === "introduction" && (
           <div className="mb-12">
-              <div className="text-center mb-8">
-                <h1 className="text-5xl font-bold gradient-animate mb-4">
-                  Introducing the new FRYE documentation
-                </h1>
-                <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-                  Find all the guides and resources you need to learn about the FRYE Ecosystem.
+                          <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-animate mb-4">
+                Introducing the new FRYE documentation
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+                Find all the guides and resources you need to learn about the FRYE Ecosystem.
               </p>
             </div>
             </div>
@@ -435,8 +435,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Home className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Home className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     Introduction to the FRYE Ecosystem
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -515,8 +515,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <PlayCircle className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <PlayCircle className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     Getting Started
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -597,8 +597,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Sparkles className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     PromptX™
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -680,8 +680,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Dna className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Dna className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     CRISPR Eternity Vault
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -763,8 +763,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Globe className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Globe className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     AI NationVerse
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -846,8 +846,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Vote className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Vote className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     Snapshot DAO
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -933,8 +933,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Image className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Image className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     What is an NFT?
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -1009,8 +1009,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Zap className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Zap className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     What is Minting?
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -1085,8 +1085,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <ShoppingCart className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <ShoppingCart className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     How to Buy an NFT
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
@@ -1167,8 +1167,8 @@ export default function DocsPage() {
               <div className="space-y-8">
                 {/* Header */}
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                    <Tag className="h-8 w-8 mr-3 text-cyan-400" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+                    <Tag className="h-6 w-6 sm:h-8 sm:w-8 mr-3 text-cyan-400" />
                     How to Sell an NFT
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
