@@ -97,7 +97,7 @@ export default function TokenDashboard() {
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold gradient-text mb-2">Token Dashboard</h1>

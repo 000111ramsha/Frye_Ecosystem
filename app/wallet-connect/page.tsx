@@ -87,7 +87,7 @@ export default function WalletConnect() {
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-8">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">

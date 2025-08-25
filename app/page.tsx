@@ -185,12 +185,7 @@ export default function HomePage() {
                   </div>
 
                   <Button className="w-full neon-glow bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold">
-                    <div className="flex items-center justify-center flex-wrap gap-1 sm:gap-2">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-purple-600 font-bold text-xs sm:text-sm">P</span>
-                      </div>
-                      <span className="text-center leading-tight">Purchase $FRYE Utility Tokens</span>
-                    </div>
+                    Purchase $FRYE Utility Tokens
                   </Button>
                 </CardContent>
               </Card>
@@ -435,10 +430,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/smart-prompting.png" 
                     alt="Smart Prompting" 
@@ -447,16 +442,16 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Smart Prompting</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Advanced prompt engineering tools for optimal AI interactions and creative outputs</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Smart Prompting</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Advanced prompt engineering tools for optimal AI interactions and creative outputs</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/rapid-iteration.png" 
                     alt="Rapid Iteration" 
@@ -465,16 +460,16 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Rapid Iteration</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Quick iteration and refinement of ideas through intelligent prompt suggestions</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Rapid Iteration</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Quick iteration and refinement of ideas through intelligent prompt suggestions</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/collaborative-tools.png" 
                     alt="Collaborative Tools" 
@@ -483,9 +478,9 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Collaborative Tools</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Share and collaborate on prompts with the community for enhanced innovation</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Collaborative Tools</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Share and collaborate on prompts with the community for enhanced innovation</p>
                 </div>
               </div>
             </Card>
@@ -503,10 +498,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/eternal-storage.png" 
                     alt="Eternal Storage" 
@@ -515,16 +510,16 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Eternal Storage</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Immutable storage ensuring your IP remains accessible and verifiable forever</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Eternal Storage</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Immutable storage ensuring your IP remains accessible and verifiable forever</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/distributed-security.png" 
                     alt="Distributed Security" 
@@ -533,16 +528,16 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Distributed Security</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Multi-chain redundancy ensures maximum security and accessibility</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Distributed Security</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Multi-chain redundancy ensures maximum security and accessibility</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/value-preservation.png" 
                     alt="Value Preservation" 
@@ -551,9 +546,9 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Value Preservation</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Maintain and enhance the value of your intellectual property over time</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Value Preservation</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Maintain and enhance the value of your intellectual property over time</p>
                 </div>
               </div>
             </Card>
@@ -571,10 +566,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/intelligent-analysis.png" 
                     alt="Intelligent Analysis" 
@@ -583,16 +578,16 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Intelligent Analysis</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">AI-powered IP evaluation and originality verification with advanced pattern recognition</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Intelligent Analysis</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">AI-powered IP evaluation and originality verification with advanced pattern recognition</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/smart-recommendations.png" 
                     alt="Smart Recommendations" 
@@ -601,16 +596,16 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Smart Recommendations</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Automated suggestions for IP optimization and monetization strategies</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Smart Recommendations</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Automated suggestions for IP optimization and monetization strategies</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/predictive-insights.png" 
                     alt="Predictive Insights" 
@@ -619,9 +614,9 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Predictive Insights</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Market analysis and revenue forecasting for your innovations</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Predictive Insights</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Market analysis and revenue forecasting for your innovations</p>
                 </div>
               </div>
             </Card>
@@ -641,7 +636,7 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl p-6 rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl relative overflow-hidden">
+          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl p-4 sm:p-6 rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl relative overflow-hidden">
             {/* Card background gradient spots */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <div className="absolute top-8 left-8 w-24 h-24 bg-green-500/10 rounded-full blur-2xl" />
@@ -651,45 +646,45 @@ export default function HomePage() {
               <div className="absolute bottom-16 left-16 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl" />
             </div>
             <CardContent className="p-0 relative z-10">
-              <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
                 {/* Left side - 3D elements and image */}
                 <div className="lg:w-1/2 relative">
-                  <div className="relative w-full h-96 lg:h-[28rem]">
+                  <div className="relative w-full h-64 sm:h-80 lg:h-[28rem]">
                     {/* 3D Book with OpenSea logo */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="relative">
                         {/* Blue book */}
-                        <div className="w-40 h-52 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg shadow-2xl transform rotate-12 relative">
+                        <div className="w-28 h-36 sm:w-32 sm:h-44 lg:w-40 lg:h-52 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg shadow-2xl transform rotate-12 relative">
                           <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg"></div>
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                                <span className="text-white font-bold text-xl">O</span>
+                            <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                              <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                                <span className="text-white font-bold text-sm sm:text-base lg:text-xl">O</span>
                               </div>
                             </div>
                           </div>
           </div>
 
                         {/* Document/Checklist */}
-                        <div className="absolute top-6 right-6 w-32 h-40 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg shadow-lg transform -rotate-6">
-                          <div className="p-4 space-y-3">
-                            <div className="h-3 bg-blue-400 rounded-full w-full"></div>
-                            <div className="h-3 bg-blue-400 rounded-full w-3/4"></div>
-                            <div className="h-3 bg-blue-400 rounded-full w-5/6"></div>
-                            <div className="h-3 bg-blue-400 rounded-full w-2/3"></div>
+                        <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-24 h-28 sm:w-28 sm:h-32 lg:w-32 lg:h-40 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg shadow-lg transform -rotate-6">
+                          <div className="p-2 sm:p-3 lg:p-4 space-y-2 sm:space-y-3">
+                            <div className="h-2 sm:h-3 bg-blue-400 rounded-full w-full"></div>
+                            <div className="h-2 sm:h-3 bg-blue-400 rounded-full w-3/4"></div>
+                            <div className="h-2 sm:h-3 bg-blue-400 rounded-full w-5/6"></div>
+                            <div className="h-2 sm:h-3 bg-blue-400 rounded-full w-2/3"></div>
                           </div>
                         </div>
 
                         {/* Floating crypto coins */}
-                        <div className="absolute -top-6 -left-6 w-12 h-12 bg-yellow-400 rounded-lg shadow-lg transform rotate-45"></div>
-                        <div className="absolute top-12 -right-4 w-14 h-14 bg-orange-400 rounded-full shadow-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-base">O</span>
+                        <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-yellow-400 rounded-lg shadow-lg transform rotate-45"></div>
+                        <div className="absolute top-8 -right-2 sm:top-10 sm:-right-3 lg:top-12 lg:-right-4 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-orange-400 rounded-full shadow-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs sm:text-sm lg:text-base">O</span>
                         </div>
-                        <div className="absolute -bottom-4 left-12 w-12 h-12 bg-purple-400 rounded-full shadow-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-base">∞</span>
+                        <div className="absolute -bottom-2 left-8 sm:-bottom-3 sm:left-10 lg:-bottom-4 lg:left-12 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-purple-400 rounded-full shadow-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs sm:text-sm lg:text-base">∞</span>
                         </div>
-                        <div className="absolute bottom-8 right-12 w-14 h-14 bg-blue-600 rounded-full shadow-lg flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">Ξ</span>
+                        <div className="absolute bottom-6 right-8 sm:bottom-6 sm:right-10 lg:bottom-8 lg:right-12 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-blue-600 rounded-full shadow-lg flex items-center justify-center">
+                          <span className="text-white font-bold text-xs sm:text-sm">Ξ</span>
                         </div>
                       </div>
                     </div>
@@ -704,18 +699,18 @@ export default function HomePage() {
                     </div>
                   </div>
                   
-                  <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 sm:mb-4">
                     New to NFTs?
                   </h2>
                   
-                  <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                  <p className="text-base sm:text-lg lg:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed px-2">
                     Find all your answers here.
                   </p>
                   
                   <Link href="/docs?section=what-is-nft">
                     <Button 
                       size="lg"
-                      className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 text-lg font-semibold shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+                      className="bg-blue-600 hover:bg-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
                     >
                       Get Started
                     </Button>
@@ -775,17 +770,17 @@ export default function HomePage() {
               <Card key={index} className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl overflow-hidden">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left hover:bg-slate-800/30 transition-colors duration-200"
+                  className="w-full p-4 sm:p-6 text-left hover:bg-slate-800/30 transition-colors duration-200"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-white flex items-start">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white font-bold text-sm">Q</span>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-white flex items-start">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0">
+                        <span className="text-white font-bold text-xs sm:text-sm">Q</span>
                       </div>
                       {faq.question}
                     </h3>
-                    <div className={`ml-4 transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : 'rotate-0'}`}>
-                      <ChevronDown className="h-6 w-6 text-slate-400" />
+                    <div className={`ml-2 sm:ml-4 transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : 'rotate-0'}`}>
+                      <ChevronDown className="h-5 w-5 sm:h-6 sm:w-6 text-slate-400" />
                     </div>
                   </div>
                 </button>
@@ -793,8 +788,8 @@ export default function HomePage() {
                 <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="px-6 pb-6 ml-12">
-                    <p className="text-slate-300 leading-relaxed">{faq.answer}</p>
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 ml-8 sm:ml-12">
+                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
               </Card>

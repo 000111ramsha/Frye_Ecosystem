@@ -20,7 +20,7 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">

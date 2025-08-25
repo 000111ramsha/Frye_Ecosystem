@@ -135,7 +135,7 @@ export default function Dashboard() {
       </aside>
 
       {/* Content */}
-      <div className={cn("pt-16 min-h-screen transition-all", isSidebarCollapsed ? "md:pl-16" : "md:pl-64")}> 
+      <div className={cn("pt-16 min-h-screen transition-all px-4 sm:px-6 md:px-8", isSidebarCollapsed ? "md:pl-16" : "md:pl-64")}> 
 
         {renderContent()}
       </div>

@@ -97,7 +97,7 @@ export default function IdeaSubmission() {
     return (
       <TooltipProvider>
         <div className="pt-16 min-h-screen flex items-center justify-center">
-          <div className="max-w-md mx-auto px-3 sm:px-4">
+          <div className="max-w-md mx-auto px-4 sm:px-6 md:px-8">
             <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl neon-glow text-center">
               <CardContent className="p-8">
                 <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
@@ -150,7 +150,7 @@ export default function IdeaSubmission() {
   return (
     <TooltipProvider>
       <div className="pt-16 min-h-screen">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold gradient-text mb-2">Submit Your Innovation</h1>
             <p className="text-slate-300">Transform your idea into a tokenized intellectual asset</p>

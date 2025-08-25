@@ -26,7 +26,7 @@ export default function JoinUs() {
   if (isSubmitted) {
     return (
       <div className="pt-16 min-h-screen flex items-center justify-center">
-        <div className="max-w-md mx-auto px-3 sm:px-4">
+        <div className="max-w-md mx-auto px-4 sm:px-6 md:px-8">
           <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl neon-glow text-center">
             <CardContent className="p-8">
               <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
@@ -56,7 +56,7 @@ export default function JoinUs() {
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="max-w-4xl mx-auto px-3 sm:px-4 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 animate-float">
