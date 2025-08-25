@@ -73,41 +73,41 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
         </div>
 
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="mb-6">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-800/60 backdrop-blur-sm border border-cyan-500/30 text-cyan-300 text-sm font-medium mb-8">
-              <Star className="h-4 w-4 mr-2" />
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-slate-800/60 backdrop-blur-sm border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium mb-6 sm:mb-8">
+              <Star className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
               Next-Generation IP Platform
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 gradient-text animate-float text-shadow leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 gradient-text animate-float text-shadow leading-tight">
             Transform Ideas into
             <br />
             Liquid Assets
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed text-shadow">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-200 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed text-shadow px-2">
             The revolutionary platform for digital innovation and IP monetization powered by AI-Overseer and blockchain
             technology. Join the future of intellectual property management.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Link href="/join-us" className="w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4">
+            <Link href="/join-us" className="w-full sm:w-auto max-w-sm sm:max-w-none">
               <Button
                 size="lg"
-                className="w-full sm:w-auto neon-glow bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-4 text-lg font-semibold shadow-xl gpu-accelerated"
+                className="w-full sm:w-auto neon-glow bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-xl gpu-accelerated"
               >
                 Join the Ecosystem
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </Link>
 
-            <Link href="/innovation-vault" className="w-full sm:w-auto">
+            <Link href="/innovation-vault" className="w-full sm:w-auto max-w-sm sm:max-w-none">
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-slate-600 text-slate-200 hover:bg-slate-800/60 hover:text-cyan-300 px-8 py-4 text-lg font-semibold backdrop-blur-sm bg-transparent gpu-accelerated"
+                className="w-full sm:w-auto border-slate-600 text-slate-200 hover:bg-slate-800/60 hover:text-cyan-300 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold backdrop-blur-sm bg-transparent gpu-accelerated"
               >
                 Explore Platform
               </Button>
@@ -115,7 +115,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto px-4">
             {[
               { label: "Active Users", value: "10K+" },
               { label: "NFTs Minted", value: "50K+" },
@@ -123,8 +123,8 @@ export default function HomePage() {
               { label: "Partnerships", value: "100+" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-cyan-300">{stat.value}</div>
-                <div className="text-sm text-slate-400">{stat.label}</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-300">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-slate-400">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -132,15 +132,15 @@ export default function HomePage() {
       </section>
 
       {/* Executive Summary */}
-      <section className="py-24 px-2 sm:px-3 section-bg">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 section-bg">
         <div className="max-w-6xl mx-auto">
-          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl p-6 rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl">
-            <CardHeader className="text-center pb-8">
-              <CardTitle className="text-4xl font-bold text-white mb-6">Executive Summary</CardTitle>
-              <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full"></div>
+          <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl p-4 sm:p-6 rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl">
+            <CardHeader className="text-center pb-6 sm:pb-8">
+              <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">Executive Summary</CardTitle>
+              <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full"></div>
             </CardHeader>
             <CardContent>
-              <p className="text-xl text-slate-200 leading-relaxed text-center max-w-4xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed text-center max-w-4xl mx-auto px-2">
                 The FRYE Ecosystem revolutionizes intellectual property management through AI-powered oversight,
                 blockchain integration, and tokenization. Our platform enables creators to transform ideas into liquid
                 digital assets, facilitating seamless licensing, governance, and monetization across multiple blockchain
@@ -152,44 +152,44 @@ export default function HomePage() {
       </section>
 
       {/* $FRYE Token Section */}
-      <section className="py-24 px-2 sm:px-3">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold gradient-text mb-6">$FRYE Token Ecosystem</h2>
-            <div className="max-w-4xl mx-auto mb-8">
-              <p className="text-xl text-slate-300 leading-relaxed mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6">$FRYE Token Ecosystem</h2>
+            <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-4 sm:mb-6 px-2">
               Purchase $FRYE utility tokens ($10 = 1,000 $FRYE) to access PromptX, Patent & Trademark Forms, White Papers, Pitch Decks, Eternity Vaults, NFT minting, timestamping, and hybridization tools. Each innovation minted is tied to a $FRYE crypto token on Polygon through a smart contract, securing ownership, originality, and royalties.
               </p>
-              <p className="text-lg text-slate-400 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed px-2">
               Every original idea on LUHPHOL.com creates a unique $FRYE token with a serial number, capped at 500M, ensuring verifiable scarcity, tradeable IP, and a traceable ecosystem. Pay Respect Fees in $FRYE to hybridize innovations, fostering a collaborative economy.
               </p>
             </div>
 
             {/* Innovation Counter */}
-            <div className="max-w-2xl mx-auto mb-12">
+            <div className="max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
               <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl neon-glow">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">Innovations Minted</h3>
-                    <div className="text-4xl font-bold gradient-text mb-4">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="text-center mb-4 sm:mb-6">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">Innovations Minted</h3>
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-3 sm:mb-4">
                       {innovationsMinted.toLocaleString()}/500M
                     </div>
-                    <Progress value={progressPercentage} className="h-3 mb-4 bg-slate-800 [&>div]:bg-gradient-to-r [&>div]:from-cyan-400 [&>div]:to-purple-400" />
-                    <p className="text-slate-300">Each innovation creates 1 $FRYE token with a serial number</p>
+                    <Progress value={progressPercentage} className="h-2 sm:h-3 mb-3 sm:mb-4 bg-slate-800 [&>div]:bg-gradient-to-r [&>div]:from-cyan-400 [&>div]:to-purple-400" />
+                    <p className="text-sm sm:text-base text-slate-300 px-2">Each innovation creates 1 $FRYE token with a serial number</p>
                   </div>
 
-                  <div className="flex justify-center mb-6">
-                    <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 text-sm font-semibold">
+                  <div className="flex justify-center mb-4 sm:mb-6">
+                    <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold text-center">
                       Respect Fee Protocol™ Powered by $FRYE
                     </Badge>
                   </div>
 
-                  <Button className="w-full neon-glow bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white px-8 py-4 text-lg font-semibold">
-                    <div className="flex items-center justify-center">
-                      <div className="w-6 h-6 mr-3 bg-white rounded-full flex items-center justify-center">
-                        <span className="text-purple-600 font-bold text-sm">P</span>
+                  <Button className="w-full neon-glow bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold">
+                    <div className="flex items-center justify-center flex-wrap gap-1 sm:gap-2">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-purple-600 font-bold text-xs sm:text-sm">P</span>
                       </div>
-                      Purchase $FRYE Utility Tokens
+                      <span className="text-center leading-tight">Purchase $FRYE Utility Tokens</span>
                     </div>
                   </Button>
                 </CardContent>
@@ -198,11 +198,11 @@ export default function HomePage() {
           </div>
 
           {/* Bento Grid Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-7xl mx-auto px-4">
             {/* Minting - Large card top left */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image
                     src="/minting.png"
                     alt="Minting"
@@ -212,17 +212,17 @@ export default function HomePage() {
                     priority
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Minting</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Pay fees to mint intellectual property NFTs with AI-verified originality</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Minting</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Pay fees to mint intellectual property NFTs with AI-verified originality</p>
                 </div>
               </div>
             </Card>
 
             {/* Earn $FRYE - Wide card top center */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image
                     src="/earn-frye.png"
                     alt="Earn FRYE"
@@ -231,17 +231,17 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Earn $FRYE</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Every original innovation you mint automatically generates 1 $FRYE token</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Earn $FRYE</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Every original innovation you mint automatically generates 1 $FRYE token</p>
                 </div>
               </div>
             </Card>
 
             {/* Premium Access - Larger card top right */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image
                     src="/premium-access.png"
                     alt="Premium Access"
@@ -250,17 +250,17 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Premium Access</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Unlock advanced AI features and priority platform support</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Premium Access</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Unlock advanced AI features and priority platform support</p>
                 </div>
               </div>
             </Card>
 
             {/* Respect Fees - Wide card second row */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/paying-respect-fee.png" 
                     alt="Respect Fees" 
@@ -269,36 +269,36 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Pay Respect Fees</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Use $FRYE tokens to pay Respect Fees and build upon existing innovations</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Pay Respect Fees</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Use $FRYE tokens to pay Respect Fees and build upon existing innovations</p>
                 </div>
               </div>
             </Card>
 
             {/* Staking - Card in row 2, position 1 */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/staking.png" 
                     alt="Staking" 
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
-                  />
+                    />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Staking</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Stake tokens for enhanced platform benefits and passive rewards</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Staking</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Stake tokens for enhanced platform benefits and passive rewards</p>
                 </div>
               </div>
             </Card>
 
             {/* Licensing - Wider card in row 2, position 2 */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/licensing.png" 
                     alt="Licensing" 
@@ -307,17 +307,17 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Licensing</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Access exclusive licensing auctions and premium marketplace features</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Licensing</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Access exclusive licensing auctions and premium marketplace features</p>
                 </div>
               </div>
             </Card>
 
             {/* Royalties - Wider card in row 2, position 3 */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/royalties.png" 
                     alt="Royalties" 
@@ -326,17 +326,17 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Royalties</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Earn continuous royalties from IP monetization and licensing</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Royalties</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Earn continuous royalties from IP monetization and licensing</p>
                 </div>
               </div>
             </Card>
 
             {/* Governance - Card in row 2, position 4 */}
-            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-96">
+            <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl rounded-xl transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-600/70 hover:shadow-2xl group hover:scale-[1.02] overflow-hidden h-72 sm:h-80 lg:h-96">
               <div className="h-full flex flex-col">
-                <div className="h-64 overflow-hidden p-4 relative">
+                <div className="h-48 sm:h-56 lg:h-64 overflow-hidden p-3 sm:p-4 relative">
                   <Image 
                     src="/governance.png" 
                     alt="Governance" 
@@ -345,9 +345,9 @@ export default function HomePage() {
                     className="object-cover rounded-lg group-hover:scale-110 transition-transform duration-300" 
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold text-white text-center mb-2">Governance</h3>
-                  <p className="text-slate-300 text-center text-sm leading-relaxed">Vote on ecosystem proposals and shape the future of the platform</p>
+                <div className="p-3 sm:p-4 flex-1 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white text-center mb-1 sm:mb-2">Governance</h3>
+                  <p className="text-slate-300 text-center text-xs sm:text-sm leading-relaxed">Vote on ecosystem proposals and shape the future of the platform</p>
                 </div>
               </div>
             </Card>
@@ -356,16 +356,16 @@ export default function HomePage() {
       </section>
 
       {/* Chain Integrations */}
-      <section className="py-24 px-2 sm:px-3 section-bg">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 section-bg">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold gradient-text mb-6">Multi-Chain Integration</h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6">Multi-Chain Integration</h2>
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto px-4">
               Seamlessly operate across multiple blockchain networks for maximum flexibility
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               {
                 name: "Polygon",
@@ -426,11 +426,11 @@ export default function HomePage() {
       </section>
 
       {/* PromptX Section */}
-      <section className="py-24 px-2 sm:px-3">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold gradient-text mb-6">PromptX</h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6">PromptX</h2>
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto px-4">
               Advanced prompt engineering and AI interaction tools for enhanced creativity
             </p>
           </div>
@@ -494,11 +494,11 @@ export default function HomePage() {
       </section>
 
       {/* CRISPR Eternity Vault */}
-      <section className="py-24 px-2 sm:px-3 section-bg">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 section-bg">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold gradient-text mb-6">CRISPR Eternity Vault</h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6">CRISPR Eternity Vault</h2>
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto px-4">
               Permanent, immutable storage for your most valuable intellectual property
             </p>
           </div>
@@ -562,11 +562,11 @@ export default function HomePage() {
       </section>
 
       {/* FRYE AI Concept */}
-      <section className="py-24 px-3">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold gradient-text mb-6">AI-Overseer Interface</h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6">AI-Overseer Interface</h2>
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto px-4">
               Advanced artificial intelligence powering the future of intellectual property
             </p>
           </div>
@@ -630,7 +630,7 @@ export default function HomePage() {
       </section>
 
       {/* NFT Introduction Section */}
-      <section className="py-24 px-3 section-bg relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 section-bg relative overflow-hidden">
         {/* Background gradient spots */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
@@ -728,11 +728,11 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-3">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold gradient-text mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6">Frequently Asked Questions</h2>
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto px-4">
               Get answers to the most common questions about the FRYE Ecosystem
             </p>
           </div>
@@ -813,7 +813,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-950/90 border-t border-slate-800/50 py-16 px-2 sm:px-3">
+      <footer className="bg-slate-950/90 border-t border-slate-800/50 py-12 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="space-y-4">

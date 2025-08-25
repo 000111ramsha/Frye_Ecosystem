@@ -39,6 +39,8 @@ import {
   Tag,
   Layers,
   Link2,
+  Menu,
+  X,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -189,8 +191,7 @@ const sidebarSections: SidebarSection[] = [
 export default function DocsPage() {
   const [activeSection, setActiveSection] = useState("introduction")
   const [expandedMenus, setExpandedMenus] = useState<Set<string>>(new Set())
-  
-
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
 
   // Handle query parameters for direct navigation
   React.useEffect(() => {
@@ -220,12 +221,95 @@ export default function DocsPage() {
     } else {
       const sectionId = href.slice(1)
       setActiveSection(sectionId)
+      // Close mobile sidebar when item is selected
+      setIsMobileSidebarOpen(false)
     }
   }
 
   return (
     <>
-      {/* Sidebar */}
+      {/* Mobile Hamburger Menu Button */}
+      <div className="lg:hidden fixed top-20 left-4 z-50">
+        <Button
+          onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
+          variant="outline"
+          size="sm"
+          className="bg-slate-900/90 backdrop-blur-sm border-slate-700 text-white hover:bg-slate-800 hover:border-slate-600"
+        >
+          {isMobileSidebarOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+        </Button>
+      </div>
+
+      {/* Mobile Sidebar Overlay */}
+      {isMobileSidebarOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-40 top-16"
+          onClick={() => setIsMobileSidebarOpen(false)}
+        />
+      )}
+
+      {/* Mobile Sidebar */}
+      <aside className={`lg:hidden fixed left-0 top-16 bottom-0 w-80 bg-slate-950/95 backdrop-blur-xl border-r border-slate-800/50 shadow-xl transform transition-transform duration-300 ease-in-out z-40 ${
+        isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
+        <nav className="h-full flex flex-col">
+          <div className="flex-1 py-4 space-y-6 px-4 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800">
+            {sidebarSections.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-3">
+                  {section.title}
+                </h3>
+                <div className="space-y-1">
+                  {section.items.map((item) => (
+                    <div key={item.href}>
+                      <button
+                        onClick={() => handleItemClick(item.href, !!item.children, item.title)}
+                        className={`flex items-center w-full px-3 py-2 text-sm rounded-lg transition-colors ${
+                          activeSection === item.href.slice(1)
+                            ? "bg-slate-800/60 text-cyan-300 shadow-lg shadow-cyan-500/20"
+                            : "text-slate-300 hover:text-cyan-300 hover:bg-slate-800/50"
+                        }`}
+                      >
+                        <item.icon className="h-4 w-4 mr-3" />
+                        {item.title}
+                        {item.children && (
+                          <div className="ml-auto">
+                            {expandedMenus.has(item.title) ? (
+                              <ChevronDown className="h-4 w-4" />
+                            ) : (
+                              <ChevronRight className="h-4 w-4" />
+                            )}
+                          </div>
+                        )}
+                      </button>
+                      {item.children && expandedMenus.has(item.title) && (
+                        <div className="ml-4 mt-1 space-y-1">
+                          {item.children.map((child) => (
+                            <button
+                              key={child.href}
+                              onClick={() => handleItemClick(child.href)}
+                              className={`flex items-center w-full px-3 py-2 text-sm rounded-lg transition-colors ${
+                                activeSection === child.href.slice(1)
+                                  ? "bg-slate-800/60 text-cyan-300 shadow-lg shadow-cyan-500/20"
+                                  : "text-slate-300 hover:text-cyan-300 hover:bg-slate-800/50"
+                              }`}
+                            >
+                              <div className="h-2 w-2 rounded-full bg-slate-500 mr-3" />
+                              {child.title}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </nav>
+      </aside>
+
+      {/* Desktop Sidebar */}
       <aside className="hidden lg:block fixed left-0 top-16 bottom-0 w-64 bg-slate-950/95 backdrop-blur-xl border-r border-slate-800/50 shadow-xl">
         <nav className="h-full flex flex-col">
           <div className="flex-1 py-4 space-y-6 px-4 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800">
@@ -285,8 +369,8 @@ export default function DocsPage() {
       </aside>
 
       {/* Content */}
-      <div className="pt-16 min-h-screen lg:pl-64 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
-        <div className="max-w-7xl mx-auto px-10 py-8">
+      <div className="pt-24 lg:pt-16 min-h-screen lg:pl-64 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8">
 
           {/* Hero Section - Only show for non-Core Concepts pages and non-Platform Features pages and non-Resources pages */}
           {!["what-is-nft", "what-is-minting", "how-to-buy-nft", "how-to-sell-nft", "bitcoin-ordinals", "nft-ticketing", "hybridization", "what-is-web3", "metamask-wallet", "coinbase-wallet", "what-is-dao", "what-is-cryptocurrency", "what-is-crypto-wallet", "what-is-blockchain", "compatible-blockchains", "what-is-polygon", "what-is-ethereum", "what-is-bitcoin", "introduction", "getting-started", "frye-token", "promptx", "crispr-vault", "ai-nationverse", "respect-fee", "governance", "books-patents"].includes(activeSection) && (
