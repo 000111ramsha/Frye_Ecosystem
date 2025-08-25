@@ -65,6 +65,7 @@ import {
   CheckCircle2 as Verified,
   Timer,
   Activity,
+  ArrowUp,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -637,11 +638,12 @@ function ExplorePageContent() {
   const [timeRange, setTimeRange] = useState("1d")
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0)
   const [searchQuery, setSearchQuery] = useState("")
-  const [sortBy, setSortBy] = useState("trending")
   const [isAutoPlay, setIsAutoPlay] = useState(true)
   const [showFilters, setShowFilters] = useState(false)
   // Random-only-after-mount to avoid SSR hydration mismatch
   const [randomReady, setRandomReady] = useState(false)
+  // State for scroll-to-top button visibility
+  const [showScrollToTop, setShowScrollToTop] = useState(false)
   useEffect(() => {
     setRandomReady(true)
   }, [])
@@ -655,12 +657,28 @@ function ExplorePageContent() {
     return () => clearInterval(interval)
   }, [isAutoPlay])
 
+  // Handle scroll event to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setShowScrollToTop(scrollTop > 300) // Show button after scrolling 300px
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const nextHero = () => {
     setCurrentHeroIndex((prev) => (prev + 1) % heroIdeas.length)
   }
 
   const prevHero = () => {
     setCurrentHeroIndex((prev) => (prev - 1 + heroIdeas.length) % heroIdeas.length)
+  }
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const currentIdea = heroIdeas[currentHeroIndex]
@@ -672,30 +690,30 @@ function ExplorePageContent() {
       <div className="relative px-4 pt-20 pb-8">
         <div className="max-w-7xl mx-auto">
           {/* Hero Stats Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-6 p-3 bg-slate-900/50 backdrop-blur-xl rounded-xl border border-slate-700/50">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-6 p-3 sm:p-4 bg-slate-900/50 backdrop-blur-xl rounded-xl border border-slate-700/50">
             <div className="text-center">
-              <div className="text-xl font-bold text-cyan-400">12.7M+</div>
+              <div className="text-lg sm:text-xl font-bold text-cyan-400">12.7M+</div>
               <div className="text-xs text-slate-400">Innovations Minted</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold text-purple-400">$2.4B</div>
+              <div className="text-lg sm:text-xl font-bold text-purple-400">$2.4B</div>
               <div className="text-xs text-slate-400">Total Volume</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold text-green-400">50K+</div>
+              <div className="text-lg sm:text-xl font-bold text-green-400">50K+</div>
               <div className="text-xs text-slate-400">Active Creators</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold text-orange-400">75+</div>
+              <div className="text-lg sm:text-xl font-bold text-orange-400">75+</div>
               <div className="text-xs text-slate-400">Innovation Sectors</div>
             </div>
           </div>
 
           {/* Enhanced Search and filters bar */}
-          <div className="flex flex-col lg:flex-row items-center justify-between mb-8 gap-4">
-            <div className="flex items-center space-x-4 w-full lg:w-auto">
-              <div className="relative flex-1 lg:w-96">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between mb-8 gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+              <div className="relative flex-1 sm:w-80 lg:w-96">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-cyan-400 h-5 w-5 z-10" />
                 <Input
                   type="text"
                   placeholder="Search ideas across 75+ sectors..."
@@ -718,7 +736,7 @@ function ExplorePageContent() {
                 variant="outline"
                 size="sm"
                 onClick={() => setShowFilters(!showFilters)}
-                className="border-slate-700 text-slate-300 hover:bg-slate-800 transition-all duration-300"
+                className="border-slate-700 text-slate-300 hover:bg-slate-800 transition-all duration-300 w-full sm:w-auto"
               >
                 <Filter className="h-4 w-4 mr-2" />
                 Filters
@@ -726,43 +744,13 @@ function ExplorePageContent() {
               </Button>
             </div>
 
-            <div className="flex items-center space-x-2">
-              <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-40 bg-slate-800/80 border-slate-700 text-white">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent className="bg-slate-800 border-slate-700">
-                  <SelectItem value="trending">🔥 Trending</SelectItem>
-                  <SelectItem value="newest">⭐ Newest</SelectItem>
-                  <SelectItem value="price-high">💰 Price: High</SelectItem>
-                  <SelectItem value="price-low">💸 Price: Low</SelectItem>
-                  <SelectItem value="volume">📈 Volume</SelectItem>
-                </SelectContent>
-              </Select>
 
-              <Button
-                variant={viewMode === "grid" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setViewMode("grid")}
-                className={viewMode === "grid" ? "bg-cyan-600 hover:bg-cyan-700" : "border-slate-700 text-slate-300 hover:bg-slate-800"}
-              >
-                <Grid3X3 className="h-4 w-4" />
-              </Button>
-              <Button
-                variant={viewMode === "list" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setViewMode("list")}
-                className={viewMode === "list" ? "bg-cyan-600 hover:bg-cyan-700" : "border-slate-700 text-slate-300 hover:bg-slate-800"}
-              >
-                <List className="h-4 w-4" />
-              </Button>
-            </div>
           </div>
 
           {/* Advanced Filters Panel */}
           {showFilters && (
-            <div className="mb-8 p-6 bg-slate-900/70 backdrop-blur-xl rounded-2xl border border-slate-700/50 animate-in slide-in-from-top-2 duration-300">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="mb-8 p-4 sm:p-6 bg-slate-900/70 backdrop-blur-xl rounded-2xl border border-slate-700/50 animate-in slide-in-from-top-2 duration-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div>
                   <label className="text-sm font-medium text-slate-300 mb-2 block">Price Range</label>
                   <Select>
@@ -828,7 +816,7 @@ function ExplorePageContent() {
       {/* Enhanced Hero Section with Carousel + Sidebar */}
       <div className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+          <div className="flex flex-col xl:flex-row gap-4 sm:gap-6 items-stretch">
             {/* Left: Enhanced Hero Carousel */}
             <div className="flex-1">
               <div className="relative bg-gradient-to-r from-slate-900/90 to-blue-900/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 overflow-hidden group h-full">
@@ -844,24 +832,24 @@ function ExplorePageContent() {
                 </div>
 
                 {/* Carousel Controls */}
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
+                <div className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10">
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={prevHero}
-                    className="bg-slate-900/80 border-slate-700 text-white hover:bg-slate-800 hover:border-cyan-500 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                    className="bg-slate-900/80 border-slate-700 text-white hover:bg-slate-800 hover:border-cyan-500 rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110"
                   >
-                    <ChevronLeft className="h-5 w-5" />
+                    <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </div>
-                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
+                <div className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10">
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={nextHero}
-                    className="bg-slate-900/80 border-slate-700 text-white hover:bg-slate-800 hover:border-cyan-500 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                    className="bg-slate-900/80 border-slate-700 text-white hover:bg-slate-800 hover:border-cyan-500 rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110"
                   >
-                    <ChevronRight className="h-5 w-5" />
+                    <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </div>
 
@@ -900,27 +888,27 @@ function ExplorePageContent() {
                 </div>
 
                 {/* Enhanced Content */}
-                <div className="relative p-6 lg:p-8">
-                  <div className="flex flex-col lg:flex-row items-start gap-8">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Badge className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 border border-cyan-500/30 px-3 py-1">
-                          <Fire className="h-3 w-3 mr-1" />
+                <div className="relative p-4 sm:p-6 lg:p-8">
+                  <div className="flex flex-col items-start gap-4 sm:gap-6 lg:gap-8">
+                    <div className="flex-1 w-full">
+                      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 lg:gap-3 mb-4 sm:mb-6">
+                        <Badge className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 border border-cyan-500/30 px-2 sm:px-3 py-1 text-xs">
+                          <Fire className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1" />
                           Featured Collection
                         </Badge>
                         {currentIdea.verified && (
-                          <Badge className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 border border-green-500/30 px-3 py-1">
-                            <Verified className="h-3 w-3 mr-1" />
+                          <Badge className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 border border-green-500/30 px-2 sm:px-3 py-1 text-xs">
+                            <Verified className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1" />
                             Verified
                           </Badge>
                         )}
-                        <Badge className="bg-gradient-to-r from-orange-500/20 to-red-500/20 text-orange-300 border border-orange-500/30 px-3 py-1">
-                          <Award className="h-3 w-3 mr-1" />
+                        <Badge className="bg-gradient-to-r from-orange-500/20 to-red-500/20 text-orange-300 border border-orange-500/30 px-2 sm:px-3 py-1 text-xs">
+                          <Award className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1" />
                           Top Rated
                         </Badge>
                       </div>
 
-                      <h1 className="text-3xl lg:text-4xl font-bold text-white mb-3 transition-all duration-500 leading-tight">
+                      <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 transition-all duration-500 leading-tight">
                         {currentIdea.title}
                       </h1>
 
@@ -936,33 +924,33 @@ function ExplorePageContent() {
                         </Badge>
                       </div>
 
-                      <p className="text-base text-slate-300 mb-4 max-w-2xl transition-all duration-500 leading-relaxed">
+                      <p className="text-sm sm:text-base text-slate-300 mb-4 max-w-2xl transition-all duration-500 leading-relaxed">
                         {currentIdea.description}
                       </p>
 
                       {/* Enhanced Stats Grid */}
-                      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-                        <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2 lg:gap-3 mb-4 sm:mb-6">
+                        <div className="bg-slate-800/50 rounded-lg p-2 sm:p-3 border border-slate-700/50">
                           <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Floor Price</p>
-                          <p className="text-lg font-bold text-white">{currentIdea.floorPrice} FRYE</p>
+                          <p className="text-sm sm:text-lg font-bold text-white">{currentIdea.floorPrice} FRYE</p>
                           <div className={`flex items-center gap-1 text-xs ${currentIdea.change >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                            {currentIdea.change >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
+                            {currentIdea.change >= 0 ? <TrendingUp className="h-2.5 w-2.5 sm:h-3 sm:w-3" /> : <TrendingDown className="h-2.5 w-2.5 sm:h-3 sm:w-3" />}
                             {currentIdea.change >= 0 ? '+' : ''}{currentIdea.change}%
                           </div>
                         </div>
-                        <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                        <div className="bg-slate-800/50 rounded-lg p-2 sm:p-3 border border-slate-700/50">
                           <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Total Volume</p>
-                          <p className="text-lg font-bold text-white">{currentIdea.totalVolume}K</p>
+                          <p className="text-sm sm:text-lg font-bold text-white">{currentIdea.totalVolume}K</p>
                           <p className="text-xs text-slate-400">FRYE</p>
                         </div>
-                        <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                        <div className="bg-slate-800/50 rounded-lg p-2 sm:p-3 border border-slate-700/50">
                           <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Items</p>
-                          <p className="text-lg font-bold text-white">{currentIdea.items.toLocaleString()}</p>
+                          <p className="text-sm sm:text-lg font-bold text-white">{currentIdea.items.toLocaleString()}</p>
                           <p className="text-xs text-slate-400">Total supply</p>
                         </div>
-                        <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                        <div className="bg-slate-800/50 rounded-lg p-2 sm:p-3 border border-slate-700/50">
                           <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Listed</p>
-                          <p className="text-lg font-bold text-white">{currentIdea.listed}%</p>
+                          <p className="text-sm sm:text-lg font-bold text-white">{currentIdea.listed}%</p>
                           <p className="text-xs text-slate-400">Available</p>
                         </div>
                       </div>
@@ -977,7 +965,7 @@ function ExplorePageContent() {
             </div>
 
             {/* Right: Enhanced Collections Sidebar */}
-            <div className="w-full lg:w-80">
+            <div className="w-full xl:w-80">
               <Card className="bg-slate-900/70 backdrop-blur-xl border border-slate-700/50 shadow-2xl">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between mb-4">
@@ -1368,12 +1356,12 @@ function ExplorePageContent() {
         </div>
 
         {/* Trending Tokens */}
-        <div className="mb-8">
+        <div className="mb-12">
           <h2 className="text-xl font-bold text-white mb-2">Trending Tokens</h2>
           <p className="text-slate-400 text-sm mb-4">Largest price change in the past day</p>
           
           <div className="relative">
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {[
                 { name: "The Invi...", symbol: "IGGT", price: 0.02, change: 83.8, icon: Shield, network: "solana" },
                 { name: "FLOCK", symbol: "FLOCK", price: 0.26, change: 43.3, icon: Building, network: "ethereum" },
@@ -1440,6 +1428,7 @@ function ExplorePageContent() {
 
         {/* Category Filter Tabs */}
         <div className="mb-6">
+          <h3 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Browse by Category</h3>
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
               <Button
@@ -1466,9 +1455,9 @@ function ExplorePageContent() {
         </div>
 
         {/* Enhanced Explore Collections Grid */}
-        <div className={`grid gap-4 ${
+        <div className={`grid gap-3 sm:gap-4 ${
           viewMode === "grid"
-            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             : "grid-cols-1"
         }`}>
           {featuredCollections.map((collection, index) => (
@@ -1476,7 +1465,7 @@ function ExplorePageContent() {
               viewMode === "list" ? "flex flex-row" : ""
             }`}>
               <div className={`relative overflow-hidden ${
-                viewMode === "list" ? "w-40 h-24" : "h-40"
+                viewMode === "list" ? "w-40 h-24" : "h-24 sm:h-32 lg:h-40"
               }`}>
                 <Image
                   src={collection.image}
@@ -1523,13 +1512,13 @@ function ExplorePageContent() {
               <CardContent className={`${viewMode === "list" ? "flex-1" : ""} p-4`}>
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex-1">
-                    <h4 className="font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors text-base">
+                    <h4 className="font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors text-sm sm:text-base">
                       {collection.name}
                     </h4>
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-5 h-5 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 p-0.5">
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 p-0.5">
                         <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-                          <Users className="h-2.5 w-2.5 text-cyan-400" />
+                          <Users className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-cyan-400" />
                         </div>
                       </div>
                       <span className="text-xs text-slate-300 font-medium">{collection.creator}</span>
@@ -1541,27 +1530,27 @@ function ExplorePageContent() {
                   </Button>
                 </div>
 
-                <p className="text-xs text-slate-400 mb-3 line-clamp-2">
+                <p className="text-xs text-slate-400 mb-2 sm:mb-3 line-clamp-2">
                   {collection.description}
                 </p>
 
-                <div className="grid grid-cols-2 gap-3 mb-3">
-                  <div className="bg-slate-800/50 rounded-lg p-2">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <div className="bg-slate-800/50 rounded-lg p-1.5 sm:p-2">
                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Floor Price</p>
-                    <p className="font-bold text-white text-sm">{collection.floorPrice.toFixed(4)} FRYE</p>
+                    <p className="font-bold text-white text-xs sm:text-sm">{collection.floorPrice.toFixed(4)} FRYE</p>
                   </div>
-                  <div className="bg-slate-800/50 rounded-lg p-2">
+                  <div className="bg-slate-800/50 rounded-lg p-1.5 sm:p-2">
                     <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Volume</p>
-                    <p className="font-bold text-white text-sm">{collection.volume.toFixed(1)}K FRYE</p>
+                    <p className="font-bold text-white text-xs sm:text-sm">{collection.volume.toFixed(1)}K FRYE</p>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-xs text-slate-400">
-                    <Activity className="h-3 w-3" />
-                    <span>{randomReady ? (50 + (currentHeroIndex % 50)) : 50} active</span>
+                    <Activity className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                    <span className="text-xs">{randomReady ? (50 + (currentHeroIndex % 50)) : 50} active</span>
                   </div>
-                  <Button size="sm" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white px-4 py-2 text-xs font-semibold transition-all duration-300">
+                  <Button size="sm" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white px-2 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold transition-all duration-300">
                     Explore
                   </Button>
                 </div>
@@ -1571,10 +1560,10 @@ function ExplorePageContent() {
         </div>
 
         {/* Load More Section */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 sm:mt-8">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white px-8 py-3 text-base font-semibold transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/25"
+            className="bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/25"
           >
             <Sparkles className="h-4 w-4 mr-2" />
             Load More Collections
@@ -1585,9 +1574,9 @@ function ExplorePageContent() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-12 p-6 bg-gradient-to-r from-slate-900/90 to-blue-900/90 backdrop-blur-xl rounded-xl border border-slate-700/50">
+        <div className="mt-8 sm:mt-12 p-4 sm:p-6 bg-gradient-to-r from-slate-900/90 to-blue-900/90 backdrop-blur-xl rounded-xl border border-slate-700/50">
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-white mb-3">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
               Stay Updated with FRYE Ecosystem
             </h3>
             <p className="text-slate-300 mb-4 text-sm">
@@ -1606,6 +1595,17 @@ function ExplorePageContent() {
           </div>
         </div>
       </div>
+
+      {/* Floating Scroll to Top Button */}
+      {showScrollToTop && (
+        <Button
+          onClick={scrollToTop}
+          className="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 z-50 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 animate-in slide-in-from-bottom-2"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="h-4 w-4 sm:h-5 sm:w-5" />
+        </Button>
+      )}
     </div>
   )
 }
