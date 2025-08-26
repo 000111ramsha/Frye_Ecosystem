@@ -163,8 +163,7 @@ export default function InnovationVault() {
               <div className="mb-6 p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
                 <p className="text-slate-300 text-sm leading-relaxed">
                   <strong className="text-cyan-400">CRISPR Breakthrough:</strong> Unlock NFT minting, timestamping, and
-                  hybridization tools with $FRYE ($10 = 1,000 $FRYE), purchased as utility tokens. Not directly linked to
-                  crypto. Earn 1 $FRYE per minted idea with a serial number (e.g., FRYE-000000001), capped at 500M. Pay
+                  hybridization tools with $FRYE ($10 = 1,000 $FRYE), purchased as utility tokens. Earn 1 $FRYE per minted idea with a serial number (e.g., FRYE-000000001), capped at 500M. Pay
                   Respect Fees to hybridize this idea.
                 </p>
               </div>

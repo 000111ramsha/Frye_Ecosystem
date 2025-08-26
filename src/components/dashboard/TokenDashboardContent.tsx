@@ -112,8 +112,7 @@ export default function TokenDashboardContent() {
           <CardContent className="space-y-6">
             <p className="text-slate-300 leading-relaxed">
               Invest in $FRYE on Polygon ($10 = 1,000 $FRYE) to unlock PromptX, Patent & Trademark Forms, White
-              Papers, Pitch Decks, CRISPR Eternity Vault, NFT minting, timestamping, and hybridization tools. $FRYE is
-              not directly linked to cryptocurrency. Every original idea minted creates 1 $FRYE token with a unique
+              Papers, Pitch Decks, CRISPR Eternity Vault, NFT minting, timestamping, and hybridization tools. Every original idea minted creates 1 $FRYE token with a unique
               serial number (e.g., FRYE-000000001), capped at 500M, ensuring proof-of-creation, verifiable scarcity,
               tradeable IP, and a traceable ecosystem. Pay Respect Fees in $FRYE to hybridize ideas, creating passive
               income for creators.

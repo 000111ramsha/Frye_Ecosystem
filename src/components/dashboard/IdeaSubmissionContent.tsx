@@ -353,7 +353,7 @@ export default function IdeaSubmissionContent() {
                 </CardTitle>
                 <CardDescription className="text-slate-300 leading-relaxed">
                   PromptX delivers AI-powered prompts across 75+ sectors. Unlock with $FRYE ($10 = 1,000 $FRYE)
-                  invested on Polygon, not directly linked to crypto. Mint your idea to earn 1 $FRYE with a unique
+                  invested on Polygon. Mint your idea to earn 1 $FRYE with a unique
                   serial number (e.g., FRYE-000000001), capped at 500M. Pay Respect Fees to hybridize existing ideas.
                 </CardDescription>
               </CardHeader>
