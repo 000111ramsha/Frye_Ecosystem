@@ -125,7 +125,7 @@ export default function RespectFeeSection() {
           <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg p-6 mb-6">
             <h3 className="text-orange-300 font-semibold text-lg mb-3">Core Principle</h3>
             <p className="text-slate-300 leading-relaxed">
-              On LUHPHOL.com, when an innovator wants to hybridize, remix, or build upon someone else's minted idea, 
+              On LUHPHOL, when an innovator wants to hybridize, remix, or build upon someone else's minted idea, 
               they must first send a <strong className="text-orange-300">Respect Fee</strong>—a transfer of $FRYE Tokens—to the original creator.
             </p>
           </div>

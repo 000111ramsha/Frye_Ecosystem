@@ -89,7 +89,7 @@ const docSections: DocSection[] = [
     icon: Package,
     color: "text-purple-500",
     items: [
-      { title: "AI-Overseer", description: "Powered by SuperGrok Heavy API", href: "#ai-overseer" },
+      { title: "AI-Overseer", description: "Powered by SuperGrok Heavy API - autonomous intelligence system", href: "#ai-overseer" },
       { title: "Innovation Vault", description: "Store and manage your IP assets", href: "#innovation-vault" },
       { title: "PromptX™", description: "AI-powered idea generation", href: "#promptx" },
     ]
@@ -175,7 +175,7 @@ const sidebarSections: SidebarSection[] = [
       { title: "$FRYE Token", icon: Coins, href: "#frye-token" },
       { title: "PromptX™", icon: Sparkles, href: "#promptx" },
       { title: "CRISPR Vault", icon: Dna, href: "#crispr-vault" },
-      { title: "Respect Fee Protocol", icon: Handshake, href: "#respect-fee" },
+      { title: "Respect Fee Protocol™", icon: Handshake, href: "#respect-fee" },
       { title: "Snapshot DAO", icon: Vote, href: "#governance" },
       { title: "AI NationVerse", icon: Globe, href: "#ai-nationverse" },
     ]
@@ -440,7 +440,7 @@ export default function DocsPage() {
                     Introduction to the FRYE Ecosystem
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
-                    Welcome to the FRYE Ecosystem, a next-generation platform on LUHPHOL.com that transforms your ideas into valuable, tradable assets.
+                    Welcome to the FRYE Ecosystem, a next-generation platform on LUHPHOL that transforms your ideas into valuable, tradable assets.
                   </p>
                 </div>
 
@@ -456,10 +456,10 @@ export default function DocsPage() {
                     <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-lg p-6 mb-6">
                       <h4 className="text-cyan-300 font-semibold mb-3">Core Features</h4>
                       <ul className="text-slate-300 space-y-2 text-sm">
-                        <li>• Generate ideas with <strong>PromptX</strong>, an AI-powered tool for sparking creativity.</li>
+                        <li>• Generate ideas with <strong>PromptX™</strong>, an AI-powered tool for sparking creativity.</li>
                         <li>• Access the <strong>CRISPR Eternity Vault</strong>, an exclusive archive of gene-editing concepts.</li>
                         <li>• Mint your ideas as <strong>NFTs</strong> on the Polygon blockchain, each tied to a unique <strong>FRYE token</strong>.</li>
-                        <li>• Pay <strong>Respect Fees</strong> to collaborate on others' ideas, creating a vibrant economy.</li>
+                        <li>• Pay <strong>Respect Fees</strong> to collaborate on others' ideas through the <strong>Respect Fee Protocol™</strong>, creating a vibrant economy.</li>
                         <li>• Preview <strong>AI NationVerse</strong>, a game where your ideas become virtual businesses.</li>
                       </ul>
                     </div>
@@ -520,7 +520,7 @@ export default function DocsPage() {
                     Getting Started
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
-                    Ready to dive into the FRYE Ecosystem? Follow these simple steps to start using LUHPHOL.com.
+                    Ready to dive into the FRYE Ecosystem? Follow these simple steps to start using LUHPHOL.
                   </p>
                 </div>
 
@@ -537,7 +537,7 @@ export default function DocsPage() {
                       <h4 className="text-blue-300 font-semibold mb-4 text-lg">Onboarding Steps</h4>
                       <ol className="text-slate-300 space-y-4 text-sm list-decimal list-inside">
                         <li><strong>Sign Up</strong>: Visit the homepage and click "Sign In" to register with your Google account. This creates your secure LUHPHOL account, where you'll manage your ideas and tokens.</li>
-                        <li><strong>Set Up a Wallet</strong>: Install <strong>MetaMask</strong>, a crypto wallet, and configure it for the Polygon blockchain. Connect your wallet to LUHPHOL.com to mint NFTs and store <strong>FRYE tokens</strong>.</li>
+                        <li><strong>Set Up a Wallet</strong>: Install <strong>MetaMask</strong>, a crypto wallet, and configure it for the Polygon blockchain. Connect your wallet to LUHPHOL to mint NFTs and store <strong>FRYE tokens</strong>.</li>
                         <li><strong>Purchase $FRYE Tokens</strong>: Go to the "Purchase" page and buy <strong>$FRYE</strong> with a credit card (e.g., $10 = 1,000 $FRYE). These tokens unlock platform features like PromptX and the CRISPR Vault.</li>
                         <li><strong>Explore the Platform</strong>: From your Dashboard, access features like submitting ideas, generating prompts with PromptX, browsing the CRISPR Vault, or previewing AI NationVerse.</li>
                       </ol>
@@ -560,7 +560,7 @@ export default function DocsPage() {
                         Example
                       </h4>
                       <p className="text-slate-300 text-sm">
-                        Sign up with Google, connect MetaMask, buy 1,000 $FRYE for $10, and head to PromptX to generate your first idea.
+                        Sign up with Google, connect MetaMask, buy 1,000 $FRYE for $10, and head to PromptX on LUHPHOL to generate your first idea.
                       </p>
                     </div>
                   </CardContent>
@@ -602,7 +602,7 @@ export default function DocsPage() {
                     PromptX™
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
-                    PromptX is your on-demand idea generator, designed to spark creativity with one click. Powered by the AI-Overseer, it delivers curated prompts across 10-15 sectors.
+                    PromptX is your on-demand idea generator, designed to spark creativity with one click. Powered by the AI-Overseer, it delivers curated prompts across 75+ sectors.
                   </p>
                 </div>
 
@@ -685,7 +685,7 @@ export default function DocsPage() {
                     CRISPR Eternity Vault
                   </h2>
                   <p className="text-slate-300 text-lg leading-relaxed">
-                    The CRISPR Eternity Vault is an exclusive archive of 100+ gene-editing breakthroughs, including longevity enhancements, hybrid species experiments, and CRISPR trial blueprints.
+                    The CRISPR Eternity Vault is an exclusive archive of 1000+ gene-editing breakthroughs, including longevity enhancements, hybrid species experiments, and CRISPR trial blueprints.
                   </p>
                 </div>
 
@@ -788,7 +788,7 @@ export default function DocsPage() {
                         <li>Connect your MetaMask wallet and verify you own at least 1 <strong>FRYE</strong> token (earned by minting an idea).</li>
                         <li>Explore a 3D virtual world with land plots, where you can place your NFT ideas as businesses (e.g., a food truck or carnival).</li>
                         <li>Engage in events like virtual carnivals or fairs to showcase your ideas.</li>
-                        <li>License your ideas to earn revenue, integrated with real-world APIs (e.g., Uber Eats, Shopify) for sales.</li>
+                        <li>License your ideas to earn revenue, integrated with real-world APIs like <strong>Uber Eats</strong> and <strong>Shopify</strong> for actual sales and monetization.</li>
                       </ol>
                     </div>
                   </CardContent>
@@ -809,7 +809,7 @@ export default function DocsPage() {
                         Example
                       </h4>
                       <p className="text-slate-300 text-sm">
-                        You mint a "food truck" idea, receive FRYE-000000001, and enter AI NationVerse. You place your food truck on a virtual plot, host a carnival event, and sell food via a Shopify API, earning $FRYE.
+                        You mint a "food truck" idea, receive FRYE-000000001, and enter AI NationVerse. You place your food truck on a virtual plot, host a carnival event, and sell food via <strong>Shopify API integration</strong>, earning real $FRYE tokens. You can also connect to <strong>Uber Eats</strong> to deliver virtual meals to real customers.
                       </p>
                     </div>
                   </CardContent>

@@ -83,7 +83,7 @@ body {
   }
 }
 
-@custom-variant dark (&:is(.dark *));
+
 
 :root {
   --background: oklch(1 0 0);
@@ -412,18 +412,7 @@ body {
   display: none;  /* Safari and Chrome */
 }
 
-/* Gradient animation for heading text */
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* Gradient animation for heading text - using shared keyframe definition from above */
 
 .gradient-animate {
   background: linear-gradient(

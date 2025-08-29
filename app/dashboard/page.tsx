@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import {
   Coins,
   Handshake,
@@ -13,6 +14,7 @@ import {
   Vote,
   Menu,
   X,
+  ShoppingCart,
 } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -25,23 +27,32 @@ import InnovationVaultContent from "@/components/dashboard/InnovationVaultConten
 import IdeaSubmissionContent from "@/components/dashboard/IdeaSubmissionContent"
 import SnapshotDAOContent from "@/components/dashboard/SnapshotDAOContent"
 import SettingsContent from "@/components/dashboard/SettingsContent"
+import PurchaseFryeContent from "@/components/dashboard/PurchaseFryeContent"
 
 export default function Dashboard() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
   const [activeView, setActiveView] = useState("overview")
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
-  
+  const searchParams = useSearchParams()
 
-  
   const sidebarItems = [
     { key: "overview", label: "Overview", icon: Home },
     { key: "token-dashboard", label: "Token Dashboard", icon: Coins },
+    { key: "purchase-frye", label: "Purchase FRYE", icon: ShoppingCart },
     { key: "innovation-vault", label: "Innovation Vault", icon: Shield },
     { key: "idea-submission", label: "Idea Submission", icon: Sparkles },
     { key: "snapshot-dao", label: "Snapshot DAO", icon: Vote },
     { key: "respect-fees", label: "Respect Fees", icon: Handshake },
     { key: "settings", label: "Settings", icon: Settings },
   ] as const
+
+  // Handle URL tab parameter
+  useEffect(() => {
+    const tab = searchParams.get('tab')
+    if (tab && sidebarItems.some(item => item.key === tab)) {
+      setActiveView(tab)
+    }
+  }, [searchParams])
 
   const handleItemClick = (viewKey: string) => {
     setActiveView(viewKey)
@@ -54,6 +65,8 @@ export default function Dashboard() {
         return <DashboardOverview />
       case "token-dashboard":
         return <TokenDashboardContent />
+      case "purchase-frye":
+        return <PurchaseFryeContent />
       case "innovation-vault":
         return <InnovationVaultContent />
       case "idea-submission":

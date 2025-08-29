@@ -103,7 +103,7 @@ export default function HomePage() {
               </Button>
             </Link>
 
-            <Link href="/innovation-vault" className="w-full sm:w-auto max-w-sm sm:max-w-none">
+            <Link href="/explore" className="w-full sm:w-auto max-w-sm sm:max-w-none">
               <Button
                 size="lg"
                 variant="outline"
@@ -184,9 +184,11 @@ export default function HomePage() {
                     </Badge>
                   </div>
 
-                  <Button className="w-full neon-glow bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold">
-                    Purchase $FRYE Utility Tokens
-                  </Button>
+                  <Link href="/dashboard?tab=purchase-frye">
+                    <Button className="w-full neon-glow bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold">
+                      Purchase $FRYE Utility Tokens
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>

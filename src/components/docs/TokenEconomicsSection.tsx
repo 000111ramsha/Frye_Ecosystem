@@ -22,6 +22,8 @@ import {
   Globe,
   Cpu,
   Lightbulb,
+  Clock,
+  Wallet,
 } from "lucide-react"
 
 export default function TokenEconomicsSection() {
@@ -299,20 +301,210 @@ export default function TokenEconomicsSection() {
               </div>
 
               <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
-                <h4 className="text-white font-semibold mb-3">Supply Limitation</h4>
+                <h4 className="text-white font-semibold mb-3">Token Distribution</h4>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Innovation Cap:</span>
-                    <Badge className="bg-orange-500/20 text-orange-300">500M</Badge>
+                    <span className="text-slate-300">Innovation-Linked:</span>
+                    <Badge className="bg-cyan-500/20 text-cyan-300">500M</Badge>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Max $FRYE Tokens:</span>
-                    <Badge className="bg-cyan-500/20 text-cyan-300">500M</Badge>
+                    <span className="text-slate-300">Corporate Holdings:</span>
+                    <Badge className="bg-purple-500/20 text-purple-300">500M</Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">Total Supply:</span>
+                    <Badge className="bg-orange-500/20 text-orange-300">1B</Badge>
                   </div>
                   <Progress value={2.55} className="h-2 bg-slate-700 [&>div]:bg-gradient-to-r [&>div]:from-cyan-400 [&>div]:to-purple-400" />
                   <p className="text-xs text-slate-400">12,750,000 innovations minted</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Serial-Linked Token System */}
+      <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl">
+        <CardHeader>
+          <CardTitle className="text-white text-xl flex items-center">
+            <Link2 className="h-6 w-6 mr-3 text-cyan-400" />
+            Serial-Linked Token Minting System
+          </CardTitle>
+          <CardDescription className="text-slate-300">
+            How each innovation is tied to a unique $FRYE token with serial number
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-lg p-6">
+              <h4 className="text-cyan-300 font-semibold mb-3">Serial Number System</h4>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                Each time a user mints a new innovation on LUHPHOL, the platform generates a <strong>unique serial number</strong> 
+                and creates a corresponding <strong>FRYE Token</strong> on the Polygon blockchain with that serial number embedded in its metadata.
+              </p>
+              
+              <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
+                <h5 className="text-white font-semibold mb-2">Example Serial Numbers:</h5>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                  <div className="p-2 bg-slate-700/50 rounded">
+                    <span className="text-cyan-300 font-mono">FRYE-000000001</span>
+                    <p className="text-slate-400 text-xs">First innovation ever</p>
+                  </div>
+                  <div className="p-2 bg-slate-700/50 rounded">
+                    <span className="text-cyan-300 font-mono">FRYE-000000042</span>
+                    <p className="text-slate-400 text-xs">Biotech breakthrough</p>
+                  </div>
+                  <div className="p-2 bg-slate-700/50 rounded">
+                    <span className="text-cyan-300 font-mono">FRYE-000001337</span>
+                    <p className="text-slate-400 text-xs">AI algorithm patent</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h4 className="text-white font-semibold">Token Creation Process:</h4>
+                <div className="space-y-3">
+                  {[
+                    "User submits original innovation",
+                    "System generates unique serial (e.g., FRYE-000000001)", 
+                    "FRYE Token minted on Polygon with serial metadata",
+                    "Token sent to user's wallet with ownership proof",
+                    "Innovation added to permanent blockchain record"
+                  ].map((step, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <div className="p-1 rounded-full bg-cyan-500/20 mt-1">
+                        <CheckCircle className="h-3 w-3 text-cyan-400" />
+                      </div>
+                      <div>
+                        <p className="text-slate-300 text-sm">{step}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                <h4 className="text-white font-semibold mb-3">Smart Contract Structure</h4>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center space-x-2">
+                    <Database className="h-4 w-4 text-blue-400" />
+                    <span className="text-slate-300">ERC-721 or ERC-1155 Hybrid</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FileText className="h-4 w-4 text-green-400" />
+                    <span className="text-slate-300">Serial number in metadata</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Clock className="h-4 w-4 text-purple-400" />
+                    <span className="text-slate-300">Timestamp of creation</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Wallet className="h-4 w-4 text-cyan-400" />
+                    <span className="text-slate-300">User wallet address</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Globe className="h-4 w-4 text-orange-400" />
+                    <span className="text-slate-300">IPFS or Arweave link</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-lg p-6">
+              <h4 className="text-green-300 font-semibold mb-3">Benefits of Serial-Linked FRYE Tokens</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span className="text-slate-300 text-sm"><strong>Proof-of-Creation:</strong> Every token is a digital certificate</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span className="text-slate-300 text-sm"><strong>Verifiable Scarcity:</strong> 1 Token = 1 Idea, capped at 500M</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span className="text-slate-300 text-sm"><strong>Tradeable IP Units:</strong> Can be sold, licensed, fractionalized</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span className="text-slate-300 text-sm"><strong>Traceable Ecosystem:</strong> Innovation leaderboard & royalty flows</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+              <h4 className="text-blue-300 font-semibold mb-2">📊 Innovation Counter</h4>
+              <p className="text-slate-300 text-sm">
+                Display innovation count live on LUHPHOL dashboard (e.g., "<strong>12,750,000 / 500,000,000 ideas minted</strong>") 
+                showing progress toward the 500M innovation cap.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Corporate Holdings */}
+      <Card className="bg-slate-900/70 backdrop-blur-lg border border-slate-700/60 shadow-xl">
+        <CardHeader>
+          <CardTitle className="text-white text-xl flex items-center">
+            <Lock className="h-6 w-6 mr-3 text-purple-400" />
+            FRYE Corporate Holdings
+          </CardTitle>
+          <CardDescription className="text-slate-300">
+            Strategic token allocation and supply management
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-lg p-6">
+              <h4 className="text-purple-300 font-semibold mb-3">Reserved Token Supply</h4>
+              <p className="text-slate-300 leading-relaxed">
+                The other <strong>500,000,000 FRYE tokens</strong> are locked away in the <strong>FRYE Corporate Holdings Private Wallet</strong>. 
+                This strategic reserve ensures long-term ecosystem stability and provides options for future platform development and partnerships.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                <h4 className="text-white font-semibold mb-3 flex items-center">
+                  <Database className="h-5 w-5 mr-2 text-cyan-400" />
+                  Innovation-Linked Tokens
+                </h4>
+                <ul className="text-slate-300 space-y-2 text-sm">
+                  <li>• 500M tokens maximum</li>
+                  <li>• 1 token per minted innovation</li>
+                  <li>• Publicly tradable on Polygon</li>
+                  <li>• Backed by real creativity</li>
+                </ul>
+              </div>
+              
+              <div className="p-6 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                <h4 className="text-white font-semibold mb-3 flex items-center">
+                  <Lock className="h-5 w-5 mr-2 text-purple-400" />
+                  Corporate Holdings
+                </h4>
+                <ul className="text-slate-300 space-y-2 text-sm">
+                  <li>• 500M tokens reserved</li>
+                  <li>• Locked in private wallet</li>
+                  <li>• Strategic ecosystem reserve</li>
+                  <li>• Future development fund</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+              <h4 className="text-blue-300 font-semibold mb-2">💡 Strategic Purpose</h4>
+              <p className="text-slate-300 text-sm">
+                This dual-allocation system ensures that while innovation drives immediate token supply, the platform 
+                maintains strategic reserves for long-term growth, partnerships, and ecosystem development initiatives.
+              </p>
             </div>
           </div>
         </CardContent>
@@ -373,8 +565,10 @@ export default function TokenEconomicsSection() {
             <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
               <h4 className="text-orange-300 font-semibold mb-2">⚠️ Key Point</h4>
               <p className="text-slate-300 text-sm">
-                There is no direct investing into FRYE on Polygon. Only in the $FRYE utility tokens. 
-                The actual Crypto tokens are what is linked to each innovation through the Smart Contract setup.
+                There is no investing straight into <strong>FRYE</strong> on Polygon.  Only in the <strong>$FRYE utility tokens</strong>. 
+                The actual Crypto tokens are what is linked to each innovation through the Smart Contract setup. 
+                <strong>1 FRYE Token</strong> is tied to every <strong>original Innovation</strong>. That's it. Everything 
+                is purchased through <strong>$FRYE</strong>.
               </p>
             </div>
             
@@ -412,15 +606,24 @@ export default function TokenEconomicsSection() {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h4 className="text-green-300 font-semibold">Supply-Side Economics</h4>
+              <h4 className="text-green-300 font-semibold">Supply-Backed by Brilliance</h4>
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
                   <div className="p-1 rounded-full bg-green-500/20 mt-1">
                     <CheckCircle className="h-3 w-3 text-green-400" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">Supply Backed by Brilliance</p>
-                    <p className="text-slate-300 text-sm">Each token tied to real, timestamped innovation</p>
+                    <p className="text-white font-medium">Each Token Tied to Real Innovation</p>
+                    <p className="text-slate-300 text-sm">Every $FRYE token represents a real, timestamped innovation backed by human ingenuity</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="p-1 rounded-full bg-green-500/20 mt-1">
+                    <CheckCircle className="h-3 w-3 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-white font-medium">Rarest Resource: Human Creativity</p>
+                    <p className="text-slate-300 text-sm">Token supply backed by the most valuable resource: breakthrough ideas and innovations</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -429,7 +632,16 @@ export default function TokenEconomicsSection() {
                   </div>
                   <div>
                     <p className="text-white font-medium">Fixed Supply, Infinite Demand</p>
-                    <p className="text-slate-300 text-sm">500M hard cap drives scarcity as demand rises</p>
+                    <p className="text-slate-300 text-sm">500M hard cap drives scarcity as innovation demand rises globally</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="p-1 rounded-full bg-green-500/20 mt-1">
+                    <CheckCircle className="h-3 w-3 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-white font-medium">Innovation Gravity Well</p>
+                    <p className="text-slate-300 text-sm">LUHPHOL.com becomes a digital nation of ideas where $FRYE powers all innovation activities</p>
                   </div>
                 </div>
               </div>
