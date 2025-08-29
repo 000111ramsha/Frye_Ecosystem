@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import {
   Coins,
@@ -29,7 +29,8 @@ import SnapshotDAOContent from "@/components/dashboard/SnapshotDAOContent"
 import SettingsContent from "@/components/dashboard/SettingsContent"
 import PurchaseFryeContent from "@/components/dashboard/PurchaseFryeContent"
 
-export default function Dashboard() {
+// Dashboard content component that uses useSearchParams
+function DashboardContent() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
   const [activeView, setActiveView] = useState("overview")
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
@@ -231,9 +232,20 @@ export default function Dashboard() {
 
       {/* Content */}
       <div className={cn("pt-24 lg:pt-16 min-h-screen transition-all px-4 sm:px-6 md:px-8", isSidebarCollapsed ? "lg:pl-16" : "lg:pl-64")}> 
-
         {renderContent()}
       </div>
     </>
+  )
+}
+
+export default function Dashboard() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-slate-300">Loading dashboard...</div>
+      </div>
+    }>
+      <DashboardContent />
+    </Suspense>
   )
 }
